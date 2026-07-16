@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  
+  --color-bg-light: #FFFFFF;
+  --color-card-light: #FFFFFF;
+  --color-text-primary: #111111;
+  --color-text-secondary: #6B7280;
+  --color-border-light: #EAEAEA;
+  --color-accent-crimson: #A31D1D;
+  --color-accent-gradient-start: #A31D1D;
+  --color-accent-gradient-end: #6B0F1A;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAEAEA;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #DCDCDC;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #111111;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom Typography Helpers */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom light grid pattern */
+.grid-bg-light {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+}
+
+/* Premium Gradient for Call-to-Action */
+@keyframes cta-drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.premium-cta-gradient {
+  background: linear-gradient(135deg, #A31D1D 0%, #6B0F1A 50%, #4A0A11 100%);
+  background-size: 200% 200%;
+  animation: cta-drift 10s ease infinite;
+}
+
+/* Blur Reveal utility for premium Apple-style headers */
+.blur-reveal {
+  filter: blur(8px);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: blur-reveal-anim 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes blur-reveal-anim {
+  to {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Glassmorphism system (Minimal, White Theme) */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel-light-strong {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
