@@ -114,7 +114,7 @@ export const VoiceToVerified: React.FC = () => {
                   <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block mb-4">
                     SEE EEVE IN ACTION
                   </span>
-                  <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
+                  <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
                     Every Conversation. <br />
                     <span className="text-[#A31D1D]">One Clear Picture.</span>
                   </h2>
@@ -291,7 +291,7 @@ export const VoiceToVerified: React.FC = () => {
                   <span className="text-[9px] font-mono text-[#A31D1D] font-bold uppercase tracking-wide block">WE SELL CERTAINTY</span>
                   <p className="text-[11px] text-[#6B7280] font-sans">Every call resolved, re-read, and logged to a human. No silent failures.</p>
                 </div>
-                <div className="grid grid-cols-4 gap-6 w-full lg:w-auto text-center lg:text-left border-t lg:border-t-0 pt-2 lg:pt-0">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-6 w-full lg:w-auto text-center lg:text-left border-t lg:border-t-0 pt-2 lg:pt-0">
                   <div>
                     <span className="text-sm font-sans font-black text-[#111111]">92.8%</span>
                     <span className="text-[8px] font-mono text-[#6B7280] block font-semibold leading-none">Resolved sans human</span>

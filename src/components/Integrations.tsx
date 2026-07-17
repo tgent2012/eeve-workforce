@@ -122,7 +122,7 @@ export const Integrations = () => {
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
             ENTERPRISE INTEGRATIONS
           </span>
-          <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
             Connects with your <span className="text-[#A31D1D]">Tech Stack.</span>
           </h2>
           <p className="text-base sm:text-lg text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
