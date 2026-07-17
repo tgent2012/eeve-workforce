@@ -103,7 +103,7 @@ export const VoiceToVerified: React.FC = () => {
   }, []);
 
   return (
-    <section id="platform" className="bg-transparent py-24 px-4 sm:px-12 lg:px-16 xl:px-24 overflow-x-hidden">
+    <section id="platform" className="bg-transparent pt-0 pb-24 px-4 sm:px-12 lg:px-16 xl:px-24 overflow-x-hidden">
       <div className="max-w-7xl mx-auto flex flex-col relative">
         <ContainerScroll
           titleComponent={
