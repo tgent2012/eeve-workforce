@@ -12,12 +12,12 @@ function cn(...inputs: any[]) {
 const DOCK_EASE = [0.16, 1, 0.3, 1] as const;
 const DOCK_DURATION = 0.5;
 
-const dockNavVariants = cva("w-full flex justify-center", {
+const dockNavVariants = cva("w-full", {
   variants: {
     align: {
-      center: "justify-center",
-      start: "justify-start",
-      end: "justify-end",
+      center: "",
+      start: "",
+      end: "",
     },
   },
   defaultVariants: {
@@ -26,7 +26,7 @@ const dockNavVariants = cva("w-full flex justify-center", {
 });
 
 const dockNavListVariants = cva(
-  "mb-0 flex list-none flex-row items-end justify-center text-[clamp(0.875rem,1.4vw,1.125rem)]",
+  "mb-0 flex list-none flex-row items-end justify-center p-0 text-[clamp(0.875rem,1.4vw,1.125rem)]",
   {
     variants: {
       align: {
@@ -39,6 +39,18 @@ const dockNavListVariants = cva(
       align: "center",
     },
   }
+);
+
+const dockNavItemVariants = cva("relative flex items-center justify-center");
+
+const dockNavLinkVariants = cva(
+  "relative z-[1] flex h-full w-full items-center justify-center px-[0.5em] py-0"
+);
+
+const dockNavIconVariants = cva("h-full w-full object-contain");
+
+const dockNavTooltipVariants = cva(
+  "pointer-events-none absolute top-0 z-0 whitespace-nowrap rounded-[0.25em] bg-neutral-100 px-[0.5em] py-[0.4em] font-normal text-[1em] dark:bg-neutral-800"
 );
 
 export interface DockNavItem {
@@ -70,14 +82,14 @@ function DockNavItemIcon({
   label,
 }: Pick<DockNavItem, "alt" | "icon" | "iconSrc" | "label">) {
   if (icon) {
-    return <span className="flex items-center justify-center w-full h-full p-1.5 sm:p-2.5">{icon}</span>;
+    return <span className={dockNavIconVariants()}>{icon}</span>;
   }
 
   if (iconSrc) {
     return (
       <img
         alt={alt ?? label}
-        className="h-full w-full object-contain p-1.5 sm:p-2.5"
+        className={dockNavIconVariants()}
         height={64}
         src={iconSrc}
         width={64}
@@ -110,15 +122,15 @@ function DockNav({
 
   const getWidths = () => {
     return isMobile ? {
-      base: "2.8rem",
-      far: "3.2rem",
-      close: "3.6rem",
-      active: "4.2rem",
+      base: "2.4rem",
+      far: "2.8rem",
+      close: "3.2rem",
+      active: "3.6rem",
     } : {
-      base: "4.5rem",
-      far: "5.2rem",
-      close: "6.0rem",
-      active: "6.8rem",
+      base: "5rem",
+      far: "6rem",
+      close: "7rem",
+      active: "8rem",
     };
   };
 
@@ -127,10 +139,21 @@ function DockNav({
     if (hoveredIndex === null) {
       return widths.base;
     }
+
     const distance = Math.abs(index - hoveredIndex);
-    if (distance === 0) return widths.active;
-    if (distance === 1) return widths.close;
-    if (distance === 2) return widths.far;
+
+    if (distance === 0) {
+      return widths.active;
+    }
+
+    if (distance === 1) {
+      return widths.close;
+    }
+
+    if (distance === 2) {
+      return widths.far;
+    }
+
     return widths.base;
   };
 
@@ -143,23 +166,15 @@ function DockNav({
 
   return (
     <nav className={cn(dockNavVariants({ align, className }))} {...props}>
-      <ul 
-        className={cn(
-          dockNavListVariants({ align }), 
-          "bg-white/10 dark:bg-black/10 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2.5 shadow-2xl flex items-end gap-1.5 sm:gap-3 max-w-max mx-auto"
-        )}
-      >
+      <ul className={dockNavListVariants({ align })}>
         {items.map((item, index) => {
           const isHovered = hoveredIndex === index;
           const itemKey = `${item.label}-${item.href ?? index}`;
 
           return (
             <motion.li
-              animate={{ 
-                width: getItemWidth(index),
-                height: getItemWidth(index), // Keeps the icon square
-              }}
-              className="relative flex items-center justify-center rounded-xl sm:rounded-2xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/50 dark:border-neutral-800/50 shadow-sm cursor-pointer overflow-visible"
+              animate={{ width: getItemWidth(index) }}
+              className={dockNavItemVariants()}
               initial={false}
               key={itemKey}
               onMouseEnter={() => {
@@ -171,7 +186,7 @@ function DockNav({
               transition={transition}
             >
               <a
-                className="relative z-10 flex h-full w-full items-center justify-center"
+                className={dockNavLinkVariants()}
                 href={item.href ?? "#"}
                 onClick={(event) => {
                   if (!item.href) {
@@ -189,10 +204,9 @@ function DockNav({
               <motion.div
                 animate={{
                   opacity: isHovered ? 1 : 0,
-                  y: isHovered ? (isMobile ? "-125%" : "-135%") : "-80%",
-                  scale: isHovered ? 1 : 0.8,
+                  y: isHovered ? "-140%" : "-80%",
                 }}
-                className="pointer-events-none absolute top-0 z-25 whitespace-nowrap rounded-md bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-2 py-1 text-[10px] sm:text-xs font-semibold shadow-md border border-neutral-800 dark:border-neutral-200"
+                className={dockNavTooltipVariants()}
                 initial={false}
                 transition={transition}
               >
@@ -208,5 +222,12 @@ function DockNav({
 
 export {
   DockNav,
+  dockNavIconVariants,
+  dockNavItemVariants,
+  dockNavLinkVariants,
+  dockNavListVariants,
+  dockNavTooltipVariants,
+  dockNavVariants,
 };
+
 export default DockNav;

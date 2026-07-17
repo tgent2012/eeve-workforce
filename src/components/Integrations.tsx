@@ -1,6 +1,5 @@
 "use client";
 import {
-  IconBrandSlack,
   IconDatabase,
   IconCloud,
   IconTerminal2,
@@ -34,7 +33,8 @@ export const Integrations = () => {
     },
     {
       label: "Slack",
-      icon: <IconBrandSlack className="w-full h-full text-[#4A154B]" />,
+      iconSrc: "/slack-icon.png",
+      alt: "Slack integration",
       href: "#",
     },
     {
