@@ -130,7 +130,7 @@ export const Integrations = () => {
           </p>
 
           {/* Bracket wrapper & Converging Carousel Icons */}
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 py-12 relative w-full overflow-visible">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 py-12 relative w-full overflow-hidden">
             <Bracket className="h-10 sm:h-24 text-neutral-300 flex-shrink-0" />
             
             <div className="flex items-center justify-center overflow-visible py-4">

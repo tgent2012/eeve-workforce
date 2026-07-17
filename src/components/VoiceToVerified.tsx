@@ -143,21 +143,21 @@ export const VoiceToVerified: React.FC = () => {
           }
         >
           {/* Recreated Dashboard Container Frame styled as a premium browser mockup */}
-          <div className="w-full h-full bg-white flex flex-col relative select-none overflow-y-auto no-scrollbar">
+          <div className="w-full h-full bg-white flex flex-col relative select-none overflow-y-auto overflow-x-hidden no-scrollbar">
           {/* Browser Control Header Bar */}
-          <div className="w-full bg-[#FAFAFA] border-b border-[#EAEAEA] px-6 py-4 flex items-center justify-between">
+          <div className="w-full bg-[#FAFAFA] border-b border-[#EAEAEA] px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2">
             {/* Window control buttons */}
-            <div className="flex gap-1.5">
-              <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] block" />
-              <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] block" />
-              <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29] block" />
+            <div className="flex gap-1.5 flex-shrink-0">
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] block" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] block" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27C93F] border border-[#1AAB29] block" />
             </div>
             {/* Address Bar */}
-            <div className="bg-white border border-[#EAEAEA] rounded-lg px-8 py-1.5 text-[11px] font-mono text-[#9CA3AF] w-full max-w-sm text-center truncate shadow-sm">
+            <div className="bg-white border border-[#EAEAEA] rounded-lg px-4 sm:px-8 py-1 sm:py-1.5 text-[9px] sm:text-[11px] font-mono text-[#9CA3AF] w-full max-w-[180px] sm:max-w-sm text-center truncate shadow-sm">
               eeve.ai/lemon-tree-premier
             </div>
-            {/* Spacer */}
-            <div className="w-12" />
+            {/* Spacer (Hidden on mobile) */}
+            <div className="w-12 flex-shrink-0 hidden sm:block" />
           </div>
 
           {/* Recreated Dashboard Body */}
@@ -235,7 +235,7 @@ export const VoiceToVerified: React.FC = () => {
             </div>
 
             {/* 2. MAIN DASHBOARD CONTENT AREA */}
-            <div className="flex-1 flex flex-col p-4 sm:p-6 gap-6 text-left">
+            <div className="flex-1 min-w-0 flex flex-col p-4 sm:p-6 gap-6 text-left">
               
               {/* Header Info */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-[#EAEAEA] pb-4 text-left gap-2">
