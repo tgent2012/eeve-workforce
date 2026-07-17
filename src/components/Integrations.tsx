@@ -115,47 +115,87 @@ export const Integrations = () => {
     <div
       ref={targetRef}
       id="integrations"
-      className="relative w-full min-h-[150vh] bg-transparent overflow-visible select-none"
+      className={`relative w-full bg-transparent overflow-hidden select-none ${
+        isMobile ? "py-24" : "min-h-[150vh]"
+      }`}
     >
-      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-6 items-center overflow-hidden">
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
-            ENTERPRISE INTEGRATIONS
-          </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
-            Connects with your <span className="text-[#A31D1D]">Tech Stack.</span>
-          </h2>
-          <p className="text-base sm:text-lg text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
-            EEVE works alongside the software your teams already rely on. No manual workflows, no database migration, and no API friction.
-          </p>
+      {isMobile ? (
+        <div className="w-full flex flex-col items-center justify-center px-4">
+          <div className="w-full max-w-4xl mx-auto text-center flex flex-col gap-6 items-center">
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
+              ENTERPRISE INTEGRATIONS
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
+              Connects with your <span className="text-[#A31D1D]">Tech Stack.</span>
+            </h2>
+            <p className="text-base sm:text-lg text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
+              EEVE works alongside the software your teams already rely on. No manual workflows, no database migration, and no API friction.
+            </p>
 
-          {/* Bracket wrapper & Converging Carousel Icons */}
-          <div className="flex items-center justify-center gap-1 sm:gap-2 mt-8 py-12 relative w-full overflow-hidden scale-[0.72] xs:scale-75 sm:scale-100 origin-center">
-            <Bracket className="h-10 sm:h-24 text-neutral-300 flex-shrink-0" />
-            
-            <div className="flex items-center justify-center overflow-visible py-4">
-              {techStack.map((item, index) => (
-                <TechIcon
-                  key={index}
-                  icon={item.icon}
-                  color={item.color}
-                  label={item.label}
-                  index={index}
-                  centerIndex={centerIndex}
-                  scrollYProgress={scrollYProgress}
-                  isMobile={isMobile}
-                />
-              ))}
+            {/* Static Converged Carousel Row */}
+            <div className="flex items-center justify-center gap-1 sm:gap-2 mt-8 py-6 relative w-full overflow-hidden scale-[0.72] xs:scale-75 sm:scale-100 origin-center">
+              <Bracket className="h-10 sm:h-24 text-neutral-300 flex-shrink-0" />
+              
+              <div className="flex items-center justify-center overflow-visible py-4">
+                {techStack.map((item, index) => (
+                  <div
+                    key={index}
+                    className="inline-flex flex-col items-center justify-center p-2.5 bg-white border border-[#EAEAEA] rounded-[18px] shadow-xs mx-0.5"
+                  >
+                    <item.icon className="h-5 w-5" style={{ color: item.color }} />
+                  </div>
+                ))}
+              </div>
+
+              <Bracket className="h-10 sm:h-24 scale-x-[-1] text-neutral-300 flex-shrink-0" />
             </div>
 
-            <Bracket className="h-10 sm:h-24 scale-x-[-1] text-neutral-300 flex-shrink-0" />
+            <span className="text-[10px] tracking-[0.2em] font-mono font-bold text-neutral-400 uppercase mt-4">
+              Integrations connect automatically
+            </span>
           </div>
-
-          <span className="text-[10px] tracking-[0.2em] font-mono font-bold text-neutral-400 uppercase mt-4">
-            Scroll to see integrations connect
-          </span>
         </div>
-      </div>
+      ) : (
+        <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+          <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-6 items-center overflow-hidden">
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
+              ENTERPRISE INTEGRATIONS
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
+              Connects with your <span className="text-[#A31D1D]">Tech Stack.</span>
+            </h2>
+            <p className="text-base sm:text-lg text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
+              EEVE works alongside the software your teams already rely on. No manual workflows, no database migration, and no API friction.
+            </p>
+
+            {/* Bracket wrapper & Converging Carousel Icons */}
+            <div className="flex items-center justify-center gap-1 sm:gap-2 mt-8 py-12 relative w-full overflow-hidden scale-[0.72] xs:scale-75 sm:scale-100 origin-center">
+              <Bracket className="h-10 sm:h-24 text-neutral-300 flex-shrink-0" />
+              
+              <div className="flex items-center justify-center overflow-visible py-4">
+                {techStack.map((item, index) => (
+                  <TechIcon
+                    key={index}
+                    icon={item.icon}
+                    color={item.color}
+                    label={item.label}
+                    index={index}
+                    centerIndex={centerIndex}
+                    scrollYProgress={scrollYProgress}
+                    isMobile={isMobile}
+                  />
+                ))}
+              </div>
+
+              <Bracket className="h-10 sm:h-24 scale-x-[-1] text-neutral-300 flex-shrink-0" />
+            </div>
+
+            <span className="text-[10px] tracking-[0.2em] font-mono font-bold text-neutral-400 uppercase mt-4">
+              Scroll to see integrations connect
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
