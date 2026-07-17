@@ -118,7 +118,7 @@ export const Integrations = () => {
       className="relative w-full min-h-[150vh] bg-transparent overflow-visible select-none"
     >
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center px-6 flex flex-col gap-6 items-center">
+        <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-6 items-center overflow-hidden">
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
             ENTERPRISE INTEGRATIONS
           </span>
@@ -130,7 +130,7 @@ export const Integrations = () => {
           </p>
 
           {/* Bracket wrapper & Converging Carousel Icons */}
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 py-12 relative w-full overflow-hidden">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 mt-8 py-12 relative w-full overflow-hidden scale-[0.72] xs:scale-75 sm:scale-100 origin-center">
             <Bracket className="h-10 sm:h-24 text-neutral-300 flex-shrink-0" />
             
             <div className="flex items-center justify-center overflow-visible py-4">
