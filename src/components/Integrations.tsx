@@ -58,7 +58,7 @@ export const Integrations = () => {
   return (
     <div
       id="integrations"
-      className="relative w-full bg-transparent overflow-hidden select-none pt-16 sm:pt-24 pb-2 sm:pb-2"
+      className="relative w-full bg-transparent overflow-hidden select-none pt-16 sm:pt-24 pb-12 sm:pb-20"
     >
       <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-6 items-center">
         <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
