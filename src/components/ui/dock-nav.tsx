@@ -168,7 +168,6 @@ function DockNav({
     <nav className={cn(dockNavVariants({ align, className }))} {...props}>
       <ul className={dockNavListVariants({ align })}>
         {items.map((item, index) => {
-          const isHovered = hoveredIndex === index;
           const itemKey = `${item.label}-${item.href ?? index}`;
 
           return (
@@ -201,17 +200,6 @@ function DockNav({
                   label={item.label}
                 />
               </a>
-              <motion.div
-                animate={{
-                  opacity: isHovered ? 1 : 0,
-                  y: isHovered ? "-140%" : "-80%",
-                }}
-                className={dockNavTooltipVariants()}
-                initial={false}
-                transition={transition}
-              >
-                <div>{item.label}</div>
-              </motion.div>
             </motion.li>
           );
         })}
