@@ -10,18 +10,6 @@ export const Hero: React.FC = () => {
       id="home" 
       className="relative w-full min-h-screen flex flex-col justify-center items-start text-[#111111] overflow-hidden bg-transparent px-6 sm:px-12 lg:px-16 xl:px-24 py-32"
     >
-      {/* Hero Spline Background Container */}
-      <div className="spline-container absolute top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
-        <iframe 
-          src="https://my.spline.design/radialglass-20RYcJn9wbsEb5QEYkazHjpb/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%" 
-          id="aura-spline"
-          style={{ transform: "scale(1.05)", transformOrigin: "center" }}
-          title="Hero Background Animation"
-        ></iframe>
-      </div>
 
       {/* Main Hero Content */}
       <div className="max-w-4xl z-20 flex flex-col items-start gap-8 mt-10 lg:mt-0 relative select-none">
