@@ -10,18 +10,6 @@ export const Hero: React.FC = () => {
       id="home" 
       className="relative w-full min-h-screen flex flex-col justify-center items-start text-[#111111] overflow-hidden bg-transparent px-6 sm:px-12 lg:px-16 xl:px-24 py-32"
     >
-      {/* Positioned Chips Animation Container */}
-      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[450px] h-[450px] pointer-events-none overflow-hidden" style={{ background: "transparent" }}>
-        <iframe 
-          src="https://my.spline.design/chips-Lpmy2Q4HrMAxwGztMvtaZdY0/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%" 
-          id="aura-spline"
-          style={{ transform: "scale(1.05)", transformOrigin: "center", mixBlendMode: "screen" }}
-          title="Hero Chips Animation"
-        ></iframe>
-      </div>
 
       {/* Main Hero Content */}
       <div className="max-w-4xl z-20 flex flex-col items-start gap-8 mt-10 lg:mt-0 relative select-none">
