@@ -34,7 +34,7 @@ export const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="bg-transparent py-32 px-6 sm:px-12 md:px-24 overflow-hidden">
+    <section id="faq" className="bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
       <div className="max-w-4xl mx-auto text-left">
         
         {/* Editorial Heading */}

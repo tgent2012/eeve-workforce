@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 export const IndustryBlueprints: React.FC = () => {
   const [activeImage, setActiveImage] = useState<number | null>(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const industries = [
     {
@@ -50,7 +60,7 @@ export const IndustryBlueprints: React.FC = () => {
   ];
 
   return (
-    <section id="industries" className="relative w-full bg-transparent py-32 px-6 sm:px-12 md:px-24 overflow-hidden select-none text-left">
+    <section id="industries" className="relative w-full bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden select-none text-left">
       <div className="max-w-7xl mx-auto flex flex-col gap-16 relative">
         
         {/* Editorial Heading */}
@@ -72,9 +82,9 @@ export const IndustryBlueprints: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-full relative overflow-x-auto no-scrollbar py-4"
+          className="w-full relative py-4"
         >
-          <div className="flex min-w-max md:min-w-0 md:w-full items-center justify-start md:justify-center gap-2">
+          <div className={`flex ${isMobile ? "flex-col w-full gap-3" : "w-full items-center justify-center gap-2"}`}>
             {industries.map((ind, index) => {
               const isActive = activeImage === index;
               return (
@@ -82,48 +92,65 @@ export const IndustryBlueprints: React.FC = () => {
                   key={ind.name}
                   className="relative cursor-pointer overflow-hidden rounded-[24px] border border-neutral-200/50 shadow-sm hover:shadow-md transition-shadow"
                   animate={{
-                    width: isActive ? "32rem" : "7rem",
-                    height: "30rem",
+                    width: isMobile ? "100%" : (isActive ? "32rem" : "7rem"),
+                    height: isMobile ? (isActive ? "16rem" : "6rem") : "30rem",
                   }}
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => setActiveImage(index)}
-                  onHoverStart={() => setActiveImage(index)}
+                  onHoverStart={() => !isMobile && setActiveImage(index)}
                 >
-                  {/* Backdrop Gradient Overlay (Only visible when active) */}
-                  <AnimatePresence>
-                    {isActive && (
-                      <motion.div
+                  {/* Backdrop Gradient Overlay (Always visible on mobile to maintain contrast, transitions on desktop) */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent z-10 transition-opacity duration-300 ${
+                    isActive ? "opacity-100" : (isMobile ? "opacity-60" : "opacity-0")
+                  }`} />
+
+                  {/* Text Overlay Details */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-left text-white z-25 pointer-events-none">
+                    {/* Inactive state indicator for desktop / inactive title for mobile */}
+                    {!isActive && !isMobile && (
+                      <motion.h3 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent z-10"
-                      />
-                    )}
-                  </AnimatePresence>
-
-                  {/* Text Overlay Details (Only visible when active) */}
-                  <AnimatePresence>
-                    {isActive && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.3, delay: 0.15 }}
-                        className="absolute inset-0 flex flex-col justify-end p-6 text-left text-white z-25 pointer-events-none"
+                        className="text-base font-sans font-bold tracking-tight text-white/80 leading-none origin-bottom-left -rotate-90 whitespace-nowrap absolute bottom-12 left-1/2 -translate-x-1/2"
                       >
-                        <span className="font-mono text-[9px] text-[#A31D1D] font-bold uppercase tracking-widest block mb-1">
-                          {ind.code}
-                        </span>
-                        <h3 className="text-xl sm:text-2xl font-sans font-bold tracking-tight text-white leading-none">
+                        {ind.name}
+                      </motion.h3>
+                    )}
+
+                    {/* Inactive state for mobile (simple row label) */}
+                    {!isActive && isMobile && (
+                      <div className="w-full flex items-center justify-between pointer-events-none">
+                        <h3 className="text-lg font-sans font-bold tracking-tight text-white">
                           {ind.name}
                         </h3>
-                        <p className="text-xs text-white/70 mt-2 font-sans font-normal leading-relaxed max-w-[280px]">
-                          {ind.desc}
-                        </p>
-                      </motion.div>
+                        <span className="text-[10px] font-mono text-white/50 font-bold">
+                          {ind.code.split(" / ")[0]}
+                        </span>
+                      </div>
                     )}
-                  </AnimatePresence>
+
+                    {/* Active Expanded Content */}
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <span className="font-mono text-[9px] text-[#E53935] font-bold uppercase tracking-widest block mb-1">
+                            {ind.code}
+                          </span>
+                          <h3 className="text-xl sm:text-2xl font-sans font-bold tracking-tight text-white leading-none">
+                            {ind.name}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-white/70 mt-2 font-sans font-normal leading-relaxed max-w-[320px]">
+                            {ind.desc}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
 
                   {/* Industry Image */}
                   <img

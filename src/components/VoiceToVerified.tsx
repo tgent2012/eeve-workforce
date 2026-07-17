@@ -103,7 +103,7 @@ export const VoiceToVerified: React.FC = () => {
   }, []);
 
   return (
-    <section id="platform" className="bg-transparent py-24 px-6 sm:px-12 md:px-24 overflow-hidden">
+    <section id="platform" className="bg-transparent py-24 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col relative">
         <ContainerScroll
           titleComponent={
@@ -321,7 +321,7 @@ export const VoiceToVerified: React.FC = () => {
                   <span className="text-[9px] font-mono text-[#6B7280]">1,061 fully handled</span>
                 </div>
 
-                <div className="grid grid-cols-5 gap-2 relative">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 relative">
                   {/* Step indicators */}
                   {[
                     { step: "01", val: "1,284", title: "Call connected", desc: "Picked up, greeted" },

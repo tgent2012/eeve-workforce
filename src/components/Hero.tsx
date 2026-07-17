@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-screen flex flex-col justify-center items-start text-[#111111] overflow-hidden bg-transparent px-6 sm:px-12 md:px-24 py-32"
+      className="relative w-full min-h-screen flex flex-col justify-center items-start text-[#111111] overflow-hidden bg-transparent px-6 sm:px-12 lg:px-16 xl:px-24 py-32"
     >
 
       {/* Main Hero Content */}

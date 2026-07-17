@@ -36,7 +36,7 @@ export const EnterpriseTrust: React.FC = () => {
   return (
     <section 
       id="why-choose-eeve" 
-      className="bg-transparent relative py-32 px-6 sm:px-12 md:px-24 overflow-hidden"
+      className="bg-transparent relative py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import {
   IconBrandWhatsapp,
@@ -20,6 +20,7 @@ interface TechIconProps {
   index: number;
   centerIndex: number;
   scrollYProgress: any;
+  isMobile: boolean;
 }
 
 const TechIcon = ({
@@ -29,22 +30,23 @@ const TechIcon = ({
   index,
   centerIndex,
   scrollYProgress,
+  isMobile,
 }: TechIconProps) => {
   const distanceFromCenter = index - centerIndex;
 
-  // Horizontal convergence
+  // Horizontal convergence (narrower offset on mobile to prevent overflow)
   const x = useTransform(
     scrollYProgress,
     [0, 0.7],
-    [distanceFromCenter * 75, 0],
+    [distanceFromCenter * (isMobile ? 32 : 75), 0],
   );
   // Vertical divergence that resolves to baseline
   const y = useTransform(
     scrollYProgress,
     [0, 0.7],
-    [-Math.abs(distanceFromCenter) * 20, 0],
+    [-Math.abs(distanceFromCenter) * (isMobile ? 8 : 20), 0],
   );
-  const scale = useTransform(scrollYProgress, [0, 0.7], [0.8, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.7], [isMobile ? 0.7 : 0.8, 1]);
   const rotate = useTransform(
     scrollYProgress,
     [0, 0.7],
@@ -66,9 +68,9 @@ const TechIcon = ({
         opacity,
         transformOrigin: "center",
       }}
-      className="inline-flex flex-col items-center justify-center p-4 sm:p-5 bg-white border border-[#EAEAEA] rounded-[24px] shadow-sm relative group cursor-pointer hover:border-neutral-300 transition-colors duration-300 mx-2"
+      className="inline-flex flex-col items-center justify-center p-2.5 sm:p-5 bg-white border border-[#EAEAEA] rounded-[18px] sm:rounded-[24px] shadow-sm relative group cursor-pointer hover:border-neutral-300 transition-colors duration-300 mx-1 sm:mx-2"
     >
-      <IconComponent className="h-7 w-7 sm:h-9 sm:w-9" style={{ color }} />
+      <IconComponent className="h-5 w-5 sm:h-9 sm:w-9" style={{ color }} />
       <span className="absolute -bottom-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[9px] font-bold tracking-widest text-[#6B7280] uppercase font-mono whitespace-nowrap bg-white border border-[#EAEAEA] px-2 py-1 rounded shadow-sm z-20 pointer-events-none">
         {label}
       </span>
@@ -78,6 +80,17 @@ const TechIcon = ({
 
 export const Integrations = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"],
@@ -117,8 +130,8 @@ export const Integrations = () => {
           </p>
 
           {/* Bracket wrapper & Converging Carousel Icons */}
-          <div className="flex items-center justify-center gap-2 mt-8 py-12 relative w-full overflow-visible">
-            <Bracket className="h-16 sm:h-24 text-neutral-300 flex-shrink-0" />
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-8 py-12 relative w-full overflow-visible">
+            <Bracket className="h-10 sm:h-24 text-neutral-300 flex-shrink-0" />
             
             <div className="flex items-center justify-center overflow-visible py-4">
               {techStack.map((item, index) => (
@@ -130,11 +143,12 @@ export const Integrations = () => {
                   index={index}
                   centerIndex={centerIndex}
                   scrollYProgress={scrollYProgress}
+                  isMobile={isMobile}
                 />
               ))}
             </div>
 
-            <Bracket className="h-16 sm:h-24 scale-x-[-1] text-neutral-300 flex-shrink-0" />
+            <Bracket className="h-10 sm:h-24 scale-x-[-1] text-neutral-300 flex-shrink-0" />
           </div>
 
           <span className="text-[10px] tracking-[0.2em] font-mono font-bold text-neutral-400 uppercase mt-4">

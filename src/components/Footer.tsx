@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-transparent pt-20 pb-10 px-6 sm:px-12 md:px-24">
+    <footer className="bg-transparent pt-20 pb-10 px-6 sm:px-12 lg:px-16 xl:px-24">
       <div className="max-w-7xl mx-auto">
         
         {/* Panorama-styled 4 Column Grid */}

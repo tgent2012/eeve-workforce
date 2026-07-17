@@ -106,7 +106,7 @@ export const Problem: React.FC = () => {
   ];
 
   return (
-    <section id="what-we-do" className="relative bg-transparent py-32 px-6 sm:px-12 md:px-24 overflow-hidden">
+    <section id="what-we-do" className="relative bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
       
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-10 w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(255,255,255,0.4)_0%,_transparent_70%)] pointer-events-none -z-10" />
@@ -149,9 +149,9 @@ export const Problem: React.FC = () => {
         </div>
 
         {/* Apple visionOS Glassmorphism Container */}
-        <div className="bg-white/32 backdrop-blur-[40px] saturate-[180%] border border-white/45 rounded-[32px] p-8 sm:p-16 md:p-24 shadow-[0_30px_80px_rgba(15,23,42,0.1),0_10px_35px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.55)] relative overflow-hidden before:absolute before:inset-0 before:opacity-[0.02] before:pointer-events-none before:bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20200%20200%22%20xmlns%3D%22http%3D%22www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22noiseFilter%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%20%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noiseFilter)%22%20%2F%3E%3C%2Fsvg%3E')]">
+        <div className="bg-white/32 backdrop-blur-[40px] saturate-[180%] border border-white/45 rounded-[32px] p-6 sm:p-12 lg:p-16 xl:p-24 shadow-[0_30px_80px_rgba(15,23,42,0.1),0_10px_35px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.55)] relative overflow-hidden before:absolute before:inset-0 before:opacity-[0.02] before:pointer-events-none before:bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20200%20200%22%20xmlns%3D%22http%3D%22www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22noiseFilter%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%20%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noiseFilter)%22%20%2F%3E%3C%2Fsvg%3E')]">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center relative z-10">
             
             {/* Left panel: Controls and premium visionOS feature cards */}
             <div className="lg:col-span-5 text-left flex flex-col justify-center h-full">
@@ -269,7 +269,7 @@ export const Problem: React.FC = () => {
             </div>
 
             {/* Right panel: Floating Frosted-Glass Workflow Panel */}
-            <div className="lg:col-span-7 bg-white/22 backdrop-blur-[35px] border border-white/55 rounded-[28px] p-8 sm:p-12 md:p-16 flex flex-col items-center justify-center min-h-[580px] relative overflow-hidden shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+            <div className="lg:col-span-7 bg-white/22 backdrop-blur-[35px] border border-white/55 rounded-[28px] p-4 sm:p-8 lg:p-12 flex flex-col items-center justify-center min-h-[580px] relative overflow-hidden shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
               
               {/* Radial gradient glow and faint grids */}
               <div className="absolute inset-0 grid-bg-light opacity-25 pointer-events-none" />

@@ -7,7 +7,7 @@ export const PremiumCTA: React.FC = () => {
   return (
     <section 
       id="contact" 
-      className="relative w-full py-32 px-6 sm:px-12 md:px-24 bg-transparent overflow-hidden flex flex-col items-center justify-center text-center"
+      className="relative w-full py-32 px-6 sm:px-12 lg:px-16 xl:px-24 bg-transparent overflow-hidden flex flex-col items-center justify-center text-center"
     >
       <div className="max-w-4xl z-10 flex flex-col items-center gap-6 relative">
         

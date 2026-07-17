@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export const WhatIsEeve: React.FC = () => {
   return (
-    <section id="about" className="relative bg-transparent py-32 px-6 sm:px-12 md:px-24 overflow-hidden">
+    <section id="about" className="relative bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* ScrollReveal Transition Header */}
