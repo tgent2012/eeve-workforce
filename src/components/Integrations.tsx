@@ -58,7 +58,7 @@ export const Integrations = () => {
   return (
     <div
       id="integrations"
-      className="relative w-full bg-transparent overflow-hidden select-none py-16 sm:py-24"
+      className="relative w-full bg-transparent overflow-hidden select-none pt-16 sm:pt-24 pb-2 sm:pb-2"
     >
       <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-6 items-center">
         <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
@@ -75,10 +75,6 @@ export const Integrations = () => {
         <div className="w-full mt-10 py-6 flex justify-center">
           <DockNav items={defaultItems} className="py-2" />
         </div>
-
-        <span className="text-[10px] tracking-[0.2em] font-mono font-bold text-neutral-400 uppercase mt-4">
-          Hover icons to see integrations expand
-        </span>
       </div>
     </div>
   );

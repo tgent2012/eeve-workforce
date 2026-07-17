@@ -50,7 +50,7 @@ const dockNavLinkVariants = cva(
 const dockNavIconVariants = cva("h-full w-full object-contain");
 
 const dockNavTooltipVariants = cva(
-  "pointer-events-none absolute top-0 z-0 whitespace-nowrap rounded-[0.25em] bg-neutral-100 px-[0.5em] py-[0.4em] font-normal text-[1em] dark:bg-neutral-800"
+  "pointer-events-none absolute top-0 z-10 whitespace-nowrap font-sans font-bold text-xs text-neutral-900 dark:text-neutral-100"
 );
 
 export interface DockNavItem {
