@@ -68,12 +68,12 @@ function App() {
 
   // Load and initialize Unicorn Studio WebGL Aura Shader Background globally
   useEffect(() => {
-    const scriptSrc = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.0-1/dist/unicornStudio.umd.js";
+    const scriptSrc = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.8/dist/unicornStudio.umd.js";
     let script = document.querySelector(`script[src="${scriptSrc}"]`) as HTMLScriptElement;
 
     const initUnicorn = () => {
       // @ts-ignore
-      if (window.UnicornStudio) {
+      if (window.UnicornStudio && typeof window.UnicornStudio.init === "function") {
         try {
           // @ts-ignore
           window.UnicornStudio.init();
@@ -92,14 +92,26 @@ function App() {
       };
       document.head.appendChild(script);
     } else {
-      initUnicorn();
+      // @ts-ignore
+      if (window.UnicornStudio) {
+        initUnicorn();
+      } else {
+        const prevOnload = script.onload;
+        script.onload = (e) => {
+          if (prevOnload) {
+            // @ts-ignore
+            prevOnload.call(script, e);
+          }
+          initUnicorn();
+        };
+      }
     }
   }, []);
 
   return (
     <div className="min-h-screen bg-transparent font-sans antialiased text-[#111111] relative">
-      {/* Global Unicorn Studio Aura Background */}
-      <div className="aura-background-component fixed inset-0 w-full h-full z-0 pointer-events-none bg-transparent">
+      {/* Global Unicorn Studio Aura Background (Includes animated fallback gradient) */}
+      <div className="aura-background-component fixed inset-0 w-full h-full z-0 pointer-events-none bg-transparent aura-fallback-gradient">
         <div data-us-project="SrJYfPcDUR4StI3maLL6" className="w-full h-full"></div>
       </div>
 
