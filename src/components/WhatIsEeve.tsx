@@ -36,6 +36,9 @@ export const WhatIsEeve: React.FC = () => {
               At EEVE, we believe intelligence should fit naturally into the way organisations already operate. Every business has its own way of serving customers, managing teams and running daily operations. That's why we never begin with technology—we begin by understanding your business.
             </p>
             <p>
+              For us, Workforce Intelligence starts with the conversations your business has every day. That's why every EEVE deployment is built around Voice AI that works naturally alongside your people, your processes and your customers.
+            </p>
+            <p>
               Every solution we create is thoughtfully designed around your people, your processes and your customer experience, integrating seamlessly into the way your organisation already works.
             </p>
             <p>
