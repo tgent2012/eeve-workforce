@@ -71,7 +71,7 @@ export const IndustryBlueprints: React.FC = () => {
           <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05] text-balance mb-6">
             Tailored Industry Blueprints.
           </h2>
-          <p className="text-base sm:text-lg text-[#6B7280] leading-relaxed font-sans font-normal max-w-xl">
+          <p className="text-lg sm:text-xl text-[#6B7280] leading-relaxed font-sans font-normal max-w-xl">
             Discover how EEVE automates repetitive coordination and logs transactions directly into core systems of record across seven leading industries.
           </p>
         </div>

@@ -67,7 +67,7 @@ export const Integrations = () => {
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
           Connects with your <span className="text-[#A31D1D]">Tech Stack.</span>
         </h2>
-        <p className="text-base sm:text-lg text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
+        <p className="text-lg sm:text-xl text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
           EEVE works alongside the software your teams already rely on. No manual workflows, no database migration, and no API friction.
         </p>
 

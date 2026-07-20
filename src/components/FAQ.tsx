@@ -50,7 +50,7 @@ export const FAQ: React.FC = () => {
             enableBlur={true}
             baseRotation={3}
             blurStrength={10}
-            textClassName="text-sm sm:text-base text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl block"
+            textClassName="text-lg sm:text-xl text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl block"
             wordAnimationEnd="bottom+=10% bottom"
           >
             Technical answers regarding deployment, verification, security architecture, and system integration.

@@ -133,7 +133,7 @@ export const VoiceToVerified: React.FC = () => {
                   enableBlur={true}
                   baseRotation={3}
                   blurStrength={10}
-                  textClassName="text-[#6B7280] block"
+                  textClassName="text-lg sm:text-xl text-[#6B7280] block"
                   wordAnimationEnd="bottom+=10% bottom"
                 >
                   Every customer conversation leaves behind valuable business information. EEVE brings those insights together into a single operational view, helping teams stay informed, respond faster and make better decisions throughout the day.

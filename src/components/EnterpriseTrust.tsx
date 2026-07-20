@@ -48,7 +48,7 @@ export const EnterpriseTrust: React.FC = () => {
           <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#171717] leading-[1.05] text-balance mb-6">
             Trust & Outcome Focused.
           </h2>
-          <p className="text-base sm:text-lg text-[#667085] leading-relaxed font-sans font-normal max-w-2xl text-balance">
+          <p className="text-lg sm:text-xl text-[#667085] leading-relaxed font-sans font-normal max-w-2xl text-balance">
             Category-defining technology, built for organisations that believe AI should work with people—not around them. Discover how EEVE brings Workforce Intelligence to every customer conversation.
           </p>
         </div>

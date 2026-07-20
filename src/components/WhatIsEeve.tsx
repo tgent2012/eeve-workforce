@@ -31,7 +31,7 @@ export const WhatIsEeve: React.FC = () => {
               <span className="text-[#A31D1D]">Technology</span> should adapt to the way people work.
             </h2>
           </div>
-          <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 text-base sm:text-lg text-[#111111] font-sans font-normal leading-relaxed text-balance">
+          <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 text-lg sm:text-xl text-[#111111] font-sans font-normal leading-relaxed text-balance">
             <p>
               At EEVE, we believe intelligence should fit naturally into the way organisations already operate. Every business has its own way of serving customers, managing teams and running daily operations. That's why we never begin with technology—we begin by understanding your business.
             </p>

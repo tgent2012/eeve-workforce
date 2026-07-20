@@ -138,7 +138,7 @@ export const Problem: React.FC = () => {
               Every <span className="text-[#A31D1D]">Conversation</span> Creates <span className="text-[#A31D1D]">Opportunity.</span>
             </h2>
           </div>
-          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-base sm:text-lg text-[#5B6473] font-sans font-normal leading-relaxed text-balance">
+          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-lg sm:text-xl text-[#5B6473] font-sans font-normal leading-relaxed text-balance">
             <p>
               A conversation may only last a few minutes, but its impact extends far beyond the call itself. Every interaction triggers decisions, tasks, notifications and actions across the organisation. The quality of what happens next often defines both the customer experience and operational efficiency.
             </p>
