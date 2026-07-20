@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="text-base sm:text-lg text-[#6B7280] font-sans font-normal tracking-wide leading-relaxed text-balance"
           >
-            Built for businesses where every conversation matters. Helping organisations deliver exceptional customer experiences while simplifying the work behind every conversation.
+            Eeve is an enterprise Voice AI platform that powers Workforce Intelligence, working alongside your people to turn every customer conversation into meaningful business outcomes. Built to augment your workforce, never replace it.
           </motion.p>
         </div>
 
