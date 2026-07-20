@@ -66,54 +66,8 @@ function App() {
     }
   };
 
-  // Load and initialize Unicorn Studio WebGL Aura Shader Background globally
-  useEffect(() => {
-    const scriptSrc = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.8/dist/unicornStudio.umd.js";
-    let script = document.querySelector(`script[src="${scriptSrc}"]`) as HTMLScriptElement;
-
-    const initUnicorn = () => {
-      // @ts-ignore
-      if (window.UnicornStudio && typeof window.UnicornStudio.init === "function") {
-        try {
-          // @ts-ignore
-          window.UnicornStudio.init();
-        } catch (e) {
-          console.warn("UnicornStudio already initialized or error: ", e);
-        }
-      }
-    };
-
-    if (!script) {
-      script = document.createElement("script");
-      script.src = scriptSrc;
-      script.async = true;
-      script.onload = () => {
-        initUnicorn();
-      };
-      document.head.appendChild(script);
-    } else {
-      // @ts-ignore
-      if (window.UnicornStudio) {
-        initUnicorn();
-      } else {
-        const prevOnload = script.onload;
-        script.onload = (e) => {
-          if (prevOnload) {
-            // @ts-ignore
-            prevOnload.call(script, e);
-          }
-          initUnicorn();
-        };
-      }
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-transparent font-sans antialiased text-[#111111] relative">
-      {/* Global Unicorn Studio Aura Background (Includes animated fallback gradient) */}
-      <div className="aura-background-component fixed inset-0 w-full h-full z-0 pointer-events-none bg-transparent aura-fallback-gradient">
-        <div data-us-project="SrJYfPcDUR4StI3maLL6" className="w-full h-full"></div>
-      </div>
 
       {/* Main Page Content Wrapper (Stacks on top of z-0 Aura backdrop) */}
       <div className="relative z-10 flex flex-col min-h-screen bg-transparent">

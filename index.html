@@ -9,8 +9,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#FFFFFF] text-[#111111] selection:bg-[#A31D1D]/10 selection:text-[#A31D1D]">
-    <div id="root"></div>
+  <body class="bg-[#FFFFFF] text-[#111111] selection:bg-[#A31D1D]/10 selection:text-[#A31D1D] relative min-h-screen overflow-x-hidden">
+    <!-- Global Unicorn Studio Aura Background (Includes animated fallback gradient) -->
+    <div class="aura-background-component fixed inset-0 w-full h-full z-0 pointer-events-none bg-transparent aura-fallback-gradient">
+        <div data-us-project="SrJYfPcDUR4StI3maLL6" class="absolute w-full h-full left-0 top-0 z-0"></div>
+    </div>
+
+    <div id="root" class="relative z-10"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script type="text/javascript">
+        !(function() {
+            if (!window.UnicornStudio) {
+                window.UnicornStudio = { isInitialized: false };
+                var i = document.createElement("script");
+                i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.0-1/dist/unicornStudio.umd.js";
+                i.onload = function() {
+                    if (document.readyState === "loading") {
+                        document.addEventListener("DOMContentLoaded", function() {
+                            UnicornStudio.init();
+                            window.UnicornStudio.isInitialized = true;
+                        });
+                    } else {
+                        UnicornStudio.init();
+                        window.UnicornStudio.isInitialized = true;
+                    }
+                };
+                (document.head || document.body).appendChild(i);
+            } else if (!window.UnicornStudio.isInitialized && window.UnicornStudio.init) {
+                UnicornStudio.init();
+                window.UnicornStudio.isInitialized = true;
+            }
+        })();
+    </script>
   </body>
 </html>
