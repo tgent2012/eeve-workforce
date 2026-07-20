@@ -49,7 +49,7 @@ export const EnterpriseTrust: React.FC = () => {
             Trust & Outcome Focused.
           </h2>
           <p className="text-base sm:text-lg text-[#667085] leading-relaxed font-sans font-normal max-w-2xl text-balance">
-            Category-defining technology built on operational confidence. Here is why leading service organisations choose EEVE to manage customer conversations and back-of-house coordination.
+            Category-defining technology, built for organisations that believe AI should work with people—not around them. Discover how EEVE brings Workforce Intelligence to every customer conversation.
           </p>
         </div>
 
