@@ -127,7 +127,7 @@ export const Problem: React.FC = () => {
             textClassName="font-sans font-medium text-3xl sm:text-5xl lg:text-6xl text-[#161616] leading-tight tracking-tight block"
             wordAnimationEnd="bottom+=10% bottom"
           >
-            Every day, businesses speak with customers for countless reasons: a new enquiry, a booking, a support request, a service appointment, a product question, a complaint, or a simple follow-up.
+            Every day, businesses answer hundreds of customer conversations through phone calls. Whether it's a new enquiry, a reservation, a service appointment, a support request or a simple follow-up, every call represents more than a question—it represents an opportunity to serve, sell and strengthen customer relationships.
           </ScrollReveal>
         </div>
 
@@ -140,10 +140,13 @@ export const Problem: React.FC = () => {
           </div>
           <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-base sm:text-lg text-[#5B6473] font-sans font-normal leading-relaxed text-balance">
             <p>
-              While the conversation may only last a few minutes, what happens afterwards often determines the quality of the customer experience and the efficiency of the business itself.
+              A conversation may only last a few minutes, but its impact extends far beyond the call itself. Every interaction triggers decisions, tasks, notifications and actions across the organisation. The quality of what happens next often defines both the customer experience and operational efficiency.
             </p>
             <p>
-              For many organisations, these moments still rely on people manually coordinating information, passing tasks between teams and making sure nothing gets missed. As businesses grow, these everyday processes become more complex, making it increasingly difficult to deliver consistent experiences at scale.
+              For many organisations, these moments still rely on people manually capturing information, coordinating between teams and ensuring every request reaches the right person. As customer volumes grow, maintaining speed, accuracy and consistency becomes increasingly difficult.
+            </p>
+            <p>
+              EEVE transforms every customer conversation into coordinated business execution. Through Enterprise Voice AI, conversations become structured workflows, connecting people, systems and operations without disrupting the way your organisation already works.
             </p>
           </div>
         </div>
