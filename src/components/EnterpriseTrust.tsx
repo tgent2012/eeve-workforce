@@ -1,7 +1,15 @@
 import React from "react";
 import { motion } from "motion/react";
+import { BlurText } from "./ui/blur-text";
 
 export const EnterpriseTrust: React.FC = () => {
+  const trustTokens = [
+    { text: "Trust", highlight: true },
+    { text: "&", highlight: false },
+    { text: "Outcome", highlight: false },
+    { text: "Focused.", highlight: false }
+  ];
+
   const trusts = [
     {
       title: "Designed Around Your Business",
@@ -45,9 +53,14 @@ export const EnterpriseTrust: React.FC = () => {
           <span className="section-label mb-4 block">
             WHY BUSINESSES CHOOSE EEVE
           </span>
-          <h2 className="section-heading text-balance mb-8">
-            <span className="text-[#A31D1D]">Trust</span> & Outcome Focused.
-          </h2>
+          <BlurText
+            tokens={trustTokens}
+            delay={40}
+            animateBy="words"
+            direction="bottom"
+            className="section-heading mb-8 flex-wrap"
+            highlightClassName="text-[#A31D1D] font-extrabold"
+          />
           <p className="body-copy max-w-4xl">
             Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to your organisation. Every decision is independently verified, every action is traceable and every deployment is purpose-built around the way your business operates.
           </p>
