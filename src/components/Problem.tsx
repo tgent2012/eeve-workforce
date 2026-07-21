@@ -167,7 +167,7 @@ export const Problem: React.FC = () => {
               </h3>
               
               <p className="text-base sm:text-lg text-[#5B6473] leading-relaxed mb-8">
-                Toggle the views to discover how EEVE replaces manual hand-offs and waiting loops with verified, automated operations.
+                Toggle the views to discover how EEVE replaces manual hand-offs and waiting loops with verified, automated operations with our seamless Voice AI integration that handles everything from the moment the call is answered.
               </p>
 
               {/* Redesigned Apple Glass Capsule Toggle Switch */}
