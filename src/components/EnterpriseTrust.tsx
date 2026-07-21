@@ -48,8 +48,8 @@ export const EnterpriseTrust: React.FC = () => {
           <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#171717] leading-[1.05] text-balance mb-6">
             Trust & Outcome Focused.
           </h2>
-          <p className="text-lg sm:text-xl text-[#667085] leading-relaxed font-sans font-normal max-w-2xl text-balance">
-            Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to the way your organisation operates. Every decision is independently verified, every action is traceable and every deployment is tailored to your people, your processes and your customer experience.
+          <p className="text-lg sm:text-xl text-[#667085] leading-relaxed font-sans font-normal max-w-4xl">
+            Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to your organisation. Every decision is independently verified, every action is traceable and every deployment is purpose-built around the way your business operates.
           </p>
         </div>
 
