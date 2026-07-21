@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 1, delay: 0.15, ease: "easeOut" }}
-          className="text-5xl sm:text-7xl lg:text-8xl font-sans font-black tracking-tight leading-[0.95] text-[#111111] text-balance"
+          className="hero-heading text-balance"
         >
           The Workforce <br />
           <span className="inline-flex items-baseline flex-wrap gap-x-3 gap-y-2 mt-2">
@@ -39,12 +39,12 @@ export const Hero: React.FC = () => {
         </motion.h1>
 
         {/* Sub Heading & Supporting Copy */}
-        <div className="flex flex-col gap-4 max-w-xl">
+        <div className="flex flex-col gap-6 max-w-2xl mt-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="text-xl sm:text-2xl font-semibold tracking-tight text-[#111111]"
+            className="editorial-statement leading-tight"
           >
             Intelligence That Works With People
           </motion.h2>
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-            className="text-lg sm:text-xl text-[#6B7280] font-sans font-normal tracking-wide leading-relaxed text-balance"
+            className="body-copy max-w-xl text-balance"
           >
             Eeve is an enterprise Voice AI platform that powers Workforce Intelligence, working alongside your people to turn every customer conversation into meaningful business outcomes. Built to augment your workforce, never replace it.
           </motion.p>

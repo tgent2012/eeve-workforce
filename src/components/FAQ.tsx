@@ -39,18 +39,18 @@ export const FAQ: React.FC = () => {
         
         {/* Editorial Heading */}
         <div className="mb-20">
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block mb-4">
+          <span className="section-label mb-4 block">
             RESOURCES
           </span>
-          <h2 className="text-4xl sm:text-5xl font-sans font-black tracking-tight text-[#111111] leading-none mb-6">
-            Frequently Asked Questions
+          <h2 className="section-heading text-balance mb-8">
+            Frequently Asked <span className="text-[#A31D1D]">Questions</span>
           </h2>
           <ScrollReveal
             baseOpacity={0.08}
             enableBlur={true}
             baseRotation={3}
             blurStrength={10}
-            textClassName="text-lg sm:text-xl text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl block"
+            textClassName="editorial-statement block"
             wordAnimationEnd="bottom+=10% bottom"
           >
             Technical answers regarding deployment, verification, security architecture, and system integration.
@@ -67,16 +67,16 @@ export const FAQ: React.FC = () => {
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="w-full py-5 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
                 >
-                  <span className="text-base sm:text-lg font-sans font-semibold text-[#111111] pr-4 group-hover:text-[#A31D1D] transition-colors duration-200">
+                  <span className="card-title text-left pr-4 group-hover:text-[#A31D1D] transition-colors duration-200">
                     {faq.q}
                   </span>
-                  <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[#6B7280] group-hover:text-[#111111]"
-                  >
-                    <ChevronDown className="w-5 h-5 stroke-[1.5]" />
-                  </motion.div>
+                  <div className="flex-shrink-0 ml-4">
+                    <ChevronDown
+                      className={`w-5 h-5 text-[#7A7A7A] transition-transform duration-300 ${
+                        isOpen ? "transform rotate-180 text-[#A31D1D]" : ""
+                      }`}
+                    />
+                  </div>
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -85,12 +85,14 @@ export const FAQ: React.FC = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed font-sans font-normal pb-6 pr-12 text-balance">
-                        {faq.a}
-                      </p>
+                      <div className="pb-6">
+                        <p className="card-body text-balance">
+                          {faq.a}
+                        </p>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

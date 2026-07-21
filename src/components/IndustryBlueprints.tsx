@@ -65,17 +65,17 @@ export const IndustryBlueprints: React.FC = () => {
         
         {/* Editorial Heading */}
         <div className="max-w-3xl">
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block mb-4">
+          <span className="section-label mb-4 block">
             BUILT AROUND YOUR BUSINESS
           </span>
-          <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05] text-balance mb-6">
-            Tailored Industry Blueprints.
+          <h2 className="section-heading text-balance mb-8">
+            Tailored Industry <span className="text-[#A31D1D]">Blueprints.</span>
           </h2>
-          <div className="flex flex-col gap-3 max-w-2xl">
-            <p className="text-lg sm:text-xl text-[#111111] font-sans font-bold leading-relaxed">
+          <div className="flex flex-col gap-6 max-w-2xl text-left">
+            <p className="editorial-statement leading-tight">
               Every industry works differently. EEVE is designed to adapt.
             </p>
-            <p className="text-lg sm:text-xl text-[#6B7280] leading-relaxed font-sans font-normal">
+            <p className="body-copy">
               From hospitality and healthcare to automotive and professional services, every deployment is tailored to your workflows, your policies and the way your business operates.
             </p>
           </div>

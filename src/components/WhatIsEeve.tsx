@@ -9,7 +9,7 @@ export const WhatIsEeve: React.FC = () => {
         
         {/* ScrollReveal Transition Header */}
         <div className="mb-28 text-left max-w-5xl">
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block mb-6">
+          <span className="section-label mb-4 block">
             ABOUT EEVE
           </span>
           <ScrollReveal
@@ -17,7 +17,7 @@ export const WhatIsEeve: React.FC = () => {
             enableBlur={true}
             baseRotation={3}
             blurStrength={10}
-            textClassName="font-sans font-medium text-3xl sm:text-5xl lg:text-6xl text-[#A31D1D] leading-tight tracking-tight block"
+            textClassName="editorial-statement block"
             wordAnimationEnd="bottom+=10% bottom"
           >
             Businesses don't struggle because they lack technology. They struggle because the technology they rely on often forces people to adapt to systems instead of allowing systems to adapt to people.
@@ -27,24 +27,24 @@ export const WhatIsEeve: React.FC = () => {
         {/* Section Label & Editorial Title */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
           <div className="lg:col-span-4 flex flex-col gap-6">
-            <h2 className="text-3xl sm:text-5xl font-sans font-black tracking-tight text-[#111111] leading-[1.05] text-balance">
+            <h2 className="section-heading text-balance">
               <span className="text-[#A31D1D]">Technology</span> should work around the business—not ask the business to work around technology.
             </h2>
-            <p className="text-lg sm:text-xl text-[#6B7280] font-sans font-normal leading-relaxed text-balance">
+            <p className="editorial-statement leading-tight mt-8">
               That's why every EEVE deployment begins by understanding how your organisation operates before intelligence is introduced.
             </p>
           </div>
-          <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 text-lg sm:text-xl text-[#111111] font-sans font-normal leading-relaxed text-balance">
-            <p>
+          <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 max-w-2xl">
+            <p className="body-copy">
               At EEVE, we believe intelligence should fit naturally into the way organisations already operate. Every business has its own way of serving customers, managing teams and running daily operations. That's why we never begin with technology—we begin by understanding your business.
             </p>
-            <p>
+            <p className="body-copy">
               For us, Workforce Intelligence starts with the conversations your business has every day. That's why every EEVE deployment is built around Voice AI that works naturally alongside your people, your processes and your customers.
             </p>
-            <p>
+            <p className="body-copy">
               Every solution we create is thoughtfully designed around your people, your processes and your customer experience, integrating seamlessly into the way your organisation already works.
             </p>
-            <p>
+            <p className="body-copy">
               From discovery and deployment to optimisation and long-term support, we work as a technology partner—not just a software provider—helping businesses adopt AI with confidence while keeping people at the centre of every experience.
             </p>
           </div>
@@ -60,7 +60,7 @@ export const WhatIsEeve: React.FC = () => {
         >
           <p className="text-3xl sm:text-5xl lg:text-6xl font-sans font-normal text-[#111111] tracking-tight max-w-5xl mx-auto leading-tight text-balance">
             "We don't believe businesses should adapt to AI. <br />
-            <span className="text-[#A31D1D] font-bold">We believe AI should adapt to businesses.</span>"
+            We believe AI should <span className="text-[#A31D1D] font-bold">adapt</span> to businesses."
           </p>
         </motion.div>
 

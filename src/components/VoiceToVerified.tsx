@@ -107,20 +107,20 @@ export const VoiceToVerified: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col relative">
         <ContainerScroll
           titleComponent={
-            <div className="flex flex-col gap-10 mb-16 text-left">
+            <div className="flex flex-col text-left mb-16">
               {/* Editorial Title Block */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 text-left pb-8">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 text-left border-b border-[#EAEAEA] pb-8 mb-8">
                 <div>
-                  <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block mb-4">
+                  <span className="section-label mb-4 block">
                     SEE EEVE IN ACTION
                   </span>
-                  <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
+                  <h2 className="section-heading text-balance">
                     Every Conversation. <br />
-                    <span className="text-[#A31D1D]">One Clear Picture.</span>
+                    One Clear <span className="text-[#A31D1D]">Picture.</span>
                   </h2>
                 </div>
                 
-                <div className="flex items-center gap-3 bg-[#A31D1D]/5 border border-[#A31D1D]/20 px-5 py-2.5 rounded-full font-mono text-[10px] text-[#A31D1D] font-bold">
+                <div className="flex items-center gap-3 bg-[#A31D1D]/5 border border-[#A31D1D]/20 px-5 py-2.5 rounded-full font-mono text-[10px] text-[#A31D1D] font-bold mb-1">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#A31D1D] animate-pulse" />
                   <span>REAL-TIME SIMULATION FEED</span>
                 </div>
@@ -133,7 +133,7 @@ export const VoiceToVerified: React.FC = () => {
                   enableBlur={true}
                   baseRotation={3}
                   blurStrength={10}
-                  textClassName="text-lg sm:text-xl text-[#6B7280] block"
+                  textClassName="editorial-statement block"
                   wordAnimationEnd="bottom+=10% bottom"
                 >
                   Every customer conversation leaves behind valuable business information. EEVE brings those insights together into a single operational view, helping teams stay informed, respond faster and make better decisions throughout the day.

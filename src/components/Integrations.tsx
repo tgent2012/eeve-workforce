@@ -60,14 +60,14 @@ export const Integrations = () => {
       id="integrations"
       className="relative w-full bg-transparent overflow-hidden select-none pt-16 sm:pt-24 pb-24"
     >
-      <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-6 items-center">
-        <span className="text-[11px] font-bold tracking-[0.25em] text-[#A31D1D] uppercase block">
+      <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-6 flex flex-col items-center">
+        <span className="section-label mb-4 block">
           ENTERPRISE INTEGRATIONS
         </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-[#111111] leading-[1.05]">
+        <h2 className="section-heading text-balance mb-8">
           Connects with your <span className="text-[#A31D1D]">Tech Stack.</span>
         </h2>
-        <p className="text-lg sm:text-xl text-[#6B7280] font-sans font-normal leading-relaxed max-w-xl text-balance">
+        <p className="body-copy max-w-xl text-balance">
           EEVE works alongside the software your teams already rely on. No manual workflows, no database migration, and no API friction.
         </p>
 

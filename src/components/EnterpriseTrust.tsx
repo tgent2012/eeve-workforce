@@ -42,13 +42,13 @@ export const EnterpriseTrust: React.FC = () => {
         
         {/* Editorial Heading */}
         <div className="max-w-3xl mb-24 text-left">
-          <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-[#F06D5F] font-bold uppercase block mb-4">
+          <span className="section-label mb-4 block">
             WHY BUSINESSES CHOOSE EEVE
           </span>
-          <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight text-[#171717] leading-[1.05] text-balance mb-6">
-            Trust & Outcome Focused.
+          <h2 className="section-heading text-balance mb-8">
+            <span className="text-[#A31D1D]">Trust</span> & Outcome Focused.
           </h2>
-          <p className="text-lg sm:text-xl text-[#667085] leading-relaxed font-sans font-normal max-w-4xl">
+          <p className="body-copy max-w-4xl">
             Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to your organisation. Every decision is independently verified, every action is traceable and every deployment is purpose-built around the way your business operates.
           </p>
         </div>
@@ -88,10 +88,10 @@ export const EnterpriseTrust: React.FC = () => {
               {/* Content Area */}
               <div className="p-8 flex-1 flex flex-col justify-between relative z-10">
                 <div>
-                  <h3 className="text-2xl font-sans font-bold tracking-tight text-[#171717] mb-3">
+                  <h3 className="card-title mb-3">
                     {trust.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#667085] leading-relaxed font-sans font-normal">
+                  <p className="card-body">
                     {trust.desc}
                   </p>
                 </div>

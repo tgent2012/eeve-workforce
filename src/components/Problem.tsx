@@ -116,19 +116,19 @@ export const Problem: React.FC = () => {
         {/* Section Title & Storytelling */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
           <div className="lg:col-span-5">
-            <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-[#F06D5F] font-bold uppercase block mb-6">
+            <span className="section-label mb-4 block">
               WHAT WE DO
             </span>
-            <h2 className="text-4xl sm:text-5xl font-sans font-black tracking-tight text-[#161616] leading-[1.05] text-balance">
-              Every <span className="text-[#A31D1D]">Conversation</span> <br />
+            <h2 className="section-heading text-balance mb-8">
+              Every Conversation <br />
               Creates <span className="text-[#A31D1D]">Opportunity.</span>
             </h2>
           </div>
-          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-8 text-left">
-            <p className="text-2xl sm:text-3xl font-sans font-light tracking-tight text-[#161616] leading-relaxed text-balance">
+          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-left">
+            <p className="editorial-statement block">
               Every day, organisations answer hundreds of customer phone calls. Every enquiry, booking, appointment, support request and follow-up shapes how customers experience your business.
             </p>
-            <p className="text-lg sm:text-xl text-[#5B6473] font-sans font-normal leading-relaxed text-balance">
+            <p className="body-copy max-w-2xl text-balance">
               EEVE's Enterprise Voice AI understands every conversation, independently verifies every outcome and transforms customer intent into trusted business action—working seamlessly alongside your people to ensure every opportunity moves forward with confidence.
             </p>
           </div>
@@ -141,15 +141,15 @@ export const Problem: React.FC = () => {
             
             {/* Left panel: Controls and premium visionOS feature cards */}
             <div className="lg:col-span-5 text-left flex flex-col justify-center h-full">
-              <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-[#F06D5F] font-bold uppercase mb-4 block">
+              <span className="section-label mb-4 block">
                 OPERATIONAL WORKFLOW COMPARISON
               </span>
               
-              <h3 className="text-4xl sm:text-5xl lg:text-[56px] font-sans font-extrabold text-[#161616] tracking-[-0.02em] leading-[1.05] mb-6">
+              <h3 className="section-heading text-balance mb-8">
                 Compare your workflow
               </h3>
               
-              <p className="text-base sm:text-lg text-[#5B6473] leading-relaxed mb-8">
+              <p className="body-copy mb-8">
                 Toggle the views to discover how EEVE replaces manual hand-offs and waiting loops with verified, automated operations with our seamless Voice AI integration that handles everything from the moment the call is answered.
               </p>
 
@@ -421,19 +421,19 @@ export const Problem: React.FC = () => {
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 flex flex-col text-left"
           >
-            <span className="font-mono text-[10px] text-[#F06D5F] font-bold uppercase tracking-widest block">
+            <span className="section-label mb-4 block">
               OPERATIONAL CONTEXT
             </span>
-            <h3 className="text-3xl sm:text-5xl font-sans font-light tracking-tight text-[#161616] leading-tight text-balance">
-              Unlock the <span className="text-[#A31D1D] font-black">Value</span> <br />
-              Within Every <span className="text-[#A31D1D] font-black">Interaction.</span>
+            <h3 className="section-heading text-balance mb-8">
+              Unlock the <span className="text-[#A31D1D]">Value</span> <br />
+              Within Every Interaction.
             </h3>
-            <p className="text-lg sm:text-xl text-[#6B7280] font-sans leading-relaxed max-w-2xl font-normal">
+            <p className="body-copy max-w-2xl mb-6">
               Every customer conversation contains valuable operational knowledge. Decisions, commitments, customer preferences and next steps are often lost the moment a call ends. EEVE captures that knowledge, verifies it through its intelligence layer and transforms it into structured actions that become part of your organisation's operational memory.
             </p>
-            <p className="text-lg sm:text-xl text-[#6B7280] font-sans leading-relaxed max-w-2xl font-normal">
+            <p className="body-copy max-w-2xl">
               Instead of relying on people to remember what was said or what needs to happen next, every interaction becomes a trusted, traceable record that keeps teams aligned, reduces administrative effort and ensures nothing important gets left behind.
             </p>
           </motion.div>
