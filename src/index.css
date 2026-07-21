@@ -186,4 +186,60 @@ html {
   color: #666666;
 }
 
+/* Interactive Lens Background Effect */
+:root {
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+  --reveal-size: 280px;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  background-image: url("/assets/aura_mesh_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* Sharp Layer */
+.layer-sharp {
+  z-index: -3;
+  filter: brightness(1) contrast(1.02);
+}
+
+/* Blurred Layer */
+.layer-mist {
+  z-index: -2;
+  filter: blur(45px) saturate(1.2) brightness(1.08);
+  transform: scale(1.05);
+
+  mask-image: radial-gradient(
+    circle var(--reveal-size) at var(--cursor-x) var(--cursor-y),
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    black 100%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    circle var(--reveal-size) at var(--cursor-x) var(--cursor-y),
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    black 100%
+  );
+}
+
+/* Grain Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+
 
