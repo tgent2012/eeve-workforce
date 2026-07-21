@@ -5,8 +5,17 @@ import {
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import { ContainerScroll } from "./ui/container-scroll-animation";
+import { BlurText } from "./ui/blur-text";
 
 export const VoiceToVerified: React.FC = () => {
+  const pictureTokens = [
+    { text: "Every", highlight: false },
+    { text: "Conversation.", highlight: false },
+    { text: "One", highlight: false, lineBreakBefore: true },
+    { text: "Clear", highlight: false },
+    { text: "Picture.", highlight: true }
+  ];
+
   // Dashboard Live State Simulation
   const [callsHandled, setCallsHandled] = useState(1284);
   const [roomsHeld, setRoomsHeld] = useState(218);
@@ -114,10 +123,14 @@ export const VoiceToVerified: React.FC = () => {
                   <span className="section-label mb-4 block">
                     SEE EEVE IN ACTION
                   </span>
-                  <h2 className="section-heading text-balance">
-                    Every Conversation. <br />
-                    One Clear <span className="text-[#A31D1D]">Picture.</span>
-                  </h2>
+                  <BlurText
+                    tokens={pictureTokens}
+                    delay={40}
+                    animateBy="words"
+                    direction="bottom"
+                    className="section-heading flex-wrap"
+                    highlightClassName="text-[#A31D1D] font-extrabold"
+                  />
                 </div>
                 
                 <div className="flex items-center gap-3 bg-[#A31D1D]/5 border border-[#A31D1D]/20 px-5 py-2.5 rounded-full font-mono text-[10px] text-[#A31D1D] font-bold mb-1">

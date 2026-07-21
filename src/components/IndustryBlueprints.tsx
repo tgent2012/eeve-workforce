@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { BlurText } from "./ui/blur-text";
 
 export const IndustryBlueprints: React.FC = () => {
   const [activeImage, setActiveImage] = useState<number | null>(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  const headingTokens = [
+    { text: "Tailored", highlight: false },
+    { text: "Industry", highlight: false },
+    { text: "Blueprints.", highlight: true }
+  ];
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -68,9 +76,14 @@ export const IndustryBlueprints: React.FC = () => {
           <span className="section-label mb-4 block">
             BUILT AROUND YOUR BUSINESS
           </span>
-          <h2 className="section-heading text-balance mb-8">
-            Tailored Industry <span className="text-[#A31D1D]">Blueprints.</span>
-          </h2>
+          <BlurText
+            tokens={headingTokens}
+            delay={40}
+            animateBy="words"
+            direction="bottom"
+            className="section-heading mb-8 flex-wrap"
+            highlightClassName="text-[#A31D1D] font-extrabold"
+          />
           <div className="flex flex-col gap-6 max-w-2xl text-left">
             <p className="editorial-statement leading-tight">
               Every industry works differently. EEVE is designed to adapt.

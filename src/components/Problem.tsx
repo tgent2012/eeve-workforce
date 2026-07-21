@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { AlertCircle, Clock, ShieldAlert, CheckCircle2, Database, Zap, Sparkles } from "lucide-react";
+import { BlurText } from "./ui/blur-text";
 
 export const Problem: React.FC = () => {
   const [viewMode, setViewMode] = useState<"before" | "after">("before");
+
+  const conversationTokens = [
+    { text: "Every", highlight: false },
+    { text: "Conversation", highlight: false },
+    { text: "Creates", highlight: false, lineBreakBefore: true },
+    { text: "Opportunity.", highlight: true }
+  ];
+
+  const unlockTokens = [
+    { text: "Unlock", highlight: false },
+    { text: "the", highlight: false },
+    { text: "Value", highlight: true },
+    { text: "Within", highlight: false, lineBreakBefore: true },
+    { text: "Every", highlight: false },
+    { text: "Interaction.", highlight: false }
+  ];
+
 
   // Left panel feature list data
   const beforeFeatures = [
@@ -119,10 +137,14 @@ export const Problem: React.FC = () => {
             <span className="section-label mb-4 block">
               WHAT WE DO
             </span>
-            <h2 className="section-heading text-balance mb-8">
-              Every Conversation <br />
-              Creates <span className="text-[#A31D1D]">Opportunity.</span>
-            </h2>
+            <BlurText
+              tokens={conversationTokens}
+              delay={40}
+              animateBy="words"
+              direction="bottom"
+              className="section-heading mb-8 flex-wrap"
+              highlightClassName="text-[#A31D1D] font-extrabold"
+            />
           </div>
           <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-left">
             <p className="editorial-statement block">
@@ -426,10 +448,14 @@ export const Problem: React.FC = () => {
             <span className="section-label mb-4 block">
               OPERATIONAL CONTEXT
             </span>
-            <h3 className="section-heading text-balance mb-8">
-              Unlock the <span className="text-[#A31D1D]">Value</span> <br />
-              Within Every Interaction.
-            </h3>
+            <BlurText
+              tokens={unlockTokens}
+              delay={40}
+              animateBy="words"
+              direction="bottom"
+              className="section-heading mb-8 flex-wrap"
+              highlightClassName="text-[#A31D1D] font-extrabold"
+            />
             <p className="body-copy max-w-2xl mb-6">
               Every customer conversation contains valuable operational knowledge. Decisions, commitments, customer preferences and next steps are often lost the moment a call ends. EEVE captures that knowledge, verifies it through its intelligence layer and transforms it into structured actions that become part of your organisation's operational memory.
             </p>

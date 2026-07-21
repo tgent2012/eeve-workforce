@@ -1,8 +1,25 @@
 import React from "react";
-import { motion } from "motion/react";
-import ScrollReveal from "./ScrollReveal";
+import { BlurText } from "./ui/blur-text";
 
 export const WhatIsEeve: React.FC = () => {
+  const quoteTokens = [
+    { text: '"We', highlight: false },
+    { text: "don't", highlight: false },
+    { text: "believe", highlight: false },
+    { text: "businesses", highlight: false },
+    { text: "should", highlight: false },
+    { text: "adapt", highlight: true },
+    { text: "to", highlight: true },
+    { text: "AI.", highlight: true },
+    { text: "We", highlight: false, lineBreakBefore: true },
+    { text: "believe", highlight: false },
+    { text: "AI", highlight: true },
+    { text: "should", highlight: true },
+    { text: "adapt", highlight: true },
+    { text: "to", highlight: false },
+    { text: 'businesses."', highlight: false }
+  ];
+
   return (
     <section id="about" className="relative bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -12,16 +29,13 @@ export const WhatIsEeve: React.FC = () => {
           <span className="section-label mb-4 block">
             ABOUT EEVE
           </span>
-          <ScrollReveal
-            baseOpacity={0.08}
-            enableBlur={true}
-            baseRotation={3}
-            blurStrength={10}
-            textClassName="editorial-statement block"
-            wordAnimationEnd="bottom+=10% bottom"
-          >
-            Businesses don't struggle because they lack technology. They struggle because the technology they rely on often forces people to adapt to systems instead of allowing systems to adapt to people.
-          </ScrollReveal>
+          <BlurText
+            text="Businesses don't struggle because they lack technology. They struggle because the technology they rely on often forces people to adapt to systems instead of allowing systems to adapt to people."
+            delay={30}
+            animateBy="words"
+            direction="bottom"
+            className="editorial-statement block text-left"
+          />
         </div>
 
         {/* Section Label & Editorial Title */}
@@ -48,18 +62,16 @@ export const WhatIsEeve: React.FC = () => {
         </div>
 
         {/* Large Quote at End */}
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 1.2 }}
-          className="pt-24 text-center"
-        >
-          <p className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#111111] tracking-tight max-w-5xl mx-auto leading-tight text-balance">
-            "We don't believe businesses should <span className="text-[#A31D1D] font-extrabold">adapt to AI.</span> <br />
-            We believe <span className="text-[#A31D1D] font-extrabold">AI should adapt</span> to businesses."
-          </p>
-        </motion.div>
+        <div className="pt-24 flex justify-center text-center">
+          <BlurText
+            tokens={quoteTokens}
+            delay={60}
+            animateBy="words"
+            direction="bottom"
+            className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#111111] tracking-tight max-w-5xl mx-auto leading-tight justify-center flex-wrap"
+            highlightClassName="text-[#A31D1D] font-extrabold"
+          />
+        </div>
 
       </div>
     </section>
