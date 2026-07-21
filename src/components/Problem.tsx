@@ -447,8 +447,11 @@ export const Problem: React.FC = () => {
               Unlock the <span className="text-[#A31D1D] font-black">Value</span> <br />
               Within Every <span className="text-[#A31D1D] font-black">Interaction.</span>
             </h3>
-            <p className="text-base text-[#6B7280] font-sans leading-relaxed max-w-xl font-normal">
-              By converting incoming dialogue into clean structured outputs and verified database actions, EEVE removes administrative friction and captures hidden opportunities in every single phone call.
+            <p className="text-lg sm:text-xl text-[#6B7280] font-sans leading-relaxed max-w-2xl font-normal">
+              Every customer conversation contains valuable operational knowledge. Decisions, commitments, customer preferences and next steps are often lost the moment a call ends. EEVE captures that knowledge, verifies it through its intelligence layer and transforms it into structured actions that become part of your organisation's operational memory.
+            </p>
+            <p className="text-lg sm:text-xl text-[#6B7280] font-sans leading-relaxed max-w-2xl font-normal">
+              Instead of relying on people to remember what was said or what needs to happen next, every interaction becomes a trusted, traceable record that keeps teams aligned, reduces administrative effort and ensures nothing important gets left behind.
             </p>
           </motion.div>
 
