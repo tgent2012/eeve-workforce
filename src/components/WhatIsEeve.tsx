@@ -47,13 +47,6 @@ export const WhatIsEeve: React.FC = () => {
           </div>
         </div>
 
-        {/* Editorial Bridge Statement */}
-        <div className="flex justify-center text-center py-24 border-t border-b border-neutral-100/40 my-8">
-          <p className="editorial-pullquote mx-auto">
-            Every <span className="text-[#A31D1D] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
-          </p>
-        </div>
-
         {/* Large Quote at End */}
         <motion.div
           initial={{ opacity: 0, filter: "blur(6px)" }}
