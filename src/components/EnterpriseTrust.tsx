@@ -49,7 +49,7 @@ export const EnterpriseTrust: React.FC = () => {
             Trust & Outcome Focused.
           </h2>
           <p className="text-lg sm:text-xl text-[#667085] leading-relaxed font-sans font-normal max-w-2xl text-balance">
-            Category-defining technology, built for organisations that believe AI should work with people—not around them. Discover how EEVE brings Workforce Intelligence to every customer conversation.
+            Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to the way your organisation operates. Every decision is independently verified, every action is traceable and every deployment is tailored to your people, your processes and your customer experience.
           </p>
         </div>
 
