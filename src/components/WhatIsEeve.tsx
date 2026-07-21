@@ -30,8 +30,8 @@ export const WhatIsEeve: React.FC = () => {
             <h2 className="section-heading text-balance">
               <span className="text-[#A31D1D]">Technology</span> should work around the business—not ask the business to work around technology.
             </h2>
-            <p className="editorial-statement leading-tight mt-8">
-              That's why every EEVE deployment begins by understanding how your organisation operates before intelligence is introduced.
+            <p className="editorial-pullquote text-left mt-8">
+              Every <span className="text-[#A31D1D] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
             </p>
           </div>
           <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 max-w-2xl">
