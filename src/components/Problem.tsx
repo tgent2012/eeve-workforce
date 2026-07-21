@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { AlertCircle, Clock, ShieldAlert, CheckCircle2, Database, Zap, Sparkles } from "lucide-react";
-import ScrollReveal from "./ScrollReveal";
 
 export const Problem: React.FC = () => {
   const [viewMode, setViewMode] = useState<"before" | "after">("before");
@@ -114,39 +113,23 @@ export const Problem: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         
-        {/* ScrollReveal Transition Header */}
-        <div className="mb-28 text-left max-w-5xl">
-          <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-[#F06D5F] font-bold uppercase block mb-6">
-            WHAT WE DO
-          </span>
-          <ScrollReveal
-            baseOpacity={0.08}
-            enableBlur={true}
-            baseRotation={3}
-            blurStrength={10}
-            textClassName="font-sans font-medium text-3xl sm:text-5xl lg:text-6xl text-[#161616] leading-tight tracking-tight block"
-            wordAnimationEnd="bottom+=10% bottom"
-          >
-            Every day, businesses answer hundreds of customer conversations through phone calls. Whether it's a new enquiry, a reservation, a service appointment, a support request or a simple follow-up, every call represents more than a question—it represents an opportunity to serve, sell and strengthen customer relationships.
-          </ScrollReveal>
-        </div>
-
         {/* Section Title & Storytelling */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
           <div className="lg:col-span-5">
-            <h2 className="text-3xl sm:text-5xl font-sans font-black tracking-tight text-[#161616] leading-[1.05] text-balance">
-              Every <span className="text-[#A31D1D]">Conversation</span> Creates <span className="text-[#A31D1D]">Opportunity.</span>
+            <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-[#F06D5F] font-bold uppercase block mb-6">
+              WHAT WE DO
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-sans font-black tracking-tight text-[#161616] leading-[1.05] text-balance">
+              Every <span className="text-[#A31D1D]">Conversation</span> <br />
+              Creates <span className="text-[#A31D1D]">Opportunity.</span>
             </h2>
           </div>
-          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-lg sm:text-xl text-[#5B6473] font-sans font-normal leading-relaxed text-balance">
-            <p>
-              A conversation may only last a few minutes, but its impact extends far beyond the call itself. Every interaction triggers decisions, tasks, notifications and actions across the organisation. The quality of what happens next often defines both the customer experience and operational efficiency.
+          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-8 text-left">
+            <p className="text-2xl sm:text-3xl font-sans font-light tracking-tight text-[#161616] leading-relaxed text-balance">
+              Every day, organisations answer hundreds of customer phone calls. Every enquiry, booking, appointment, support request and follow-up shapes how customers experience your business.
             </p>
-            <p>
-              For many organisations, these moments still rely on people manually capturing information, coordinating between teams and ensuring every request reaches the right person. As customer volumes grow, maintaining speed, accuracy and consistency becomes increasingly difficult.
-            </p>
-            <p>
-              EEVE transforms every customer conversation into coordinated business execution. Through Enterprise Voice AI, conversations become structured workflows, connecting people, systems and operations without disrupting the way your organisation already works.
+            <p className="text-lg sm:text-xl text-[#5B6473] font-sans font-normal leading-relaxed text-balance">
+              EEVE's Enterprise Voice AI understands every conversation, independently verifies every outcome and transforms customer intent into trusted business action—working seamlessly alongside your people to ensure every opportunity moves forward with confidence.
             </p>
           </div>
         </div>
