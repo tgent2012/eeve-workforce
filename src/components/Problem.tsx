@@ -93,7 +93,7 @@ export const Problem: React.FC = () => {
       badge: "EEVE AI Active",
       badgeClass: "bg-[#A31D1D]/10 border-[#A31D1D]/25 text-[#A31D1D] font-bold",
       isBrand: true,
-      desc: "Interprets dialogue, cross-checks rules, and extracts outcomes",
+      desc: "Combines conversational reasoning with deterministic verification, ensuring every outcome is explainable, auditable and trusted.",
       connector: "Automated API sync"
     },
     {
