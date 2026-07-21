@@ -26,10 +26,13 @@ export const WhatIsEeve: React.FC = () => {
 
         {/* Section Label & Editorial Title */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 flex flex-col gap-6">
             <h2 className="text-3xl sm:text-5xl font-sans font-black tracking-tight text-[#111111] leading-[1.05] text-balance">
-              <span className="text-[#A31D1D]">Technology</span> should adapt to the way people work.
+              <span className="text-[#A31D1D]">Technology</span> should work around the business—not ask the business to work around technology.
             </h2>
+            <p className="text-lg sm:text-xl text-[#6B7280] font-sans font-normal leading-relaxed text-balance">
+              That's why every EEVE deployment begins by understanding how your organisation operates before intelligence is introduced.
+            </p>
           </div>
           <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 text-lg sm:text-xl text-[#111111] font-sans font-normal leading-relaxed text-balance">
             <p>
