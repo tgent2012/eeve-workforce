@@ -30,9 +30,6 @@ export const WhatIsEeve: React.FC = () => {
             <h2 className="section-heading text-balance">
               <span className="text-[#A31D1D]">Technology</span> should work around the business—not ask the business to work around technology.
             </h2>
-            <p className="editorial-pullquote text-left mt-8">
-              Every <span className="text-[#A31D1D] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
-            </p>
           </div>
           <div className="lg:col-span-8 lg:pl-12 flex flex-col gap-6 max-w-2xl">
             <p className="body-copy">
@@ -48,6 +45,13 @@ export const WhatIsEeve: React.FC = () => {
               From discovery and deployment to optimisation and long-term support, we work as a technology partner—not just a software provider—helping businesses adopt AI with confidence while keeping people at the centre of every experience.
             </p>
           </div>
+        </div>
+
+        {/* Editorial Bridge Statement */}
+        <div className="flex justify-center text-center py-24 border-t border-b border-neutral-100/40 my-8">
+          <p className="editorial-pullquote mx-auto">
+            Every <span className="text-[#A31D1D] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
+          </p>
         </div>
 
         {/* Large Quote at End */}
