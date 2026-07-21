@@ -56,7 +56,7 @@ export const WhatIsEeve: React.FC = () => {
           className="pt-24 text-center"
         >
           <p className="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold text-[#111111] tracking-tight max-w-5xl mx-auto leading-tight text-balance">
-            "We don't believe businesses should adapt to AI. <br />
+            "We don't believe businesses should <span className="text-[#A31D1D] font-extrabold">adapt to AI.</span> <br />
             We believe AI should <span className="text-[#A31D1D] font-extrabold">adapt</span> to businesses."
           </p>
         </motion.div>
