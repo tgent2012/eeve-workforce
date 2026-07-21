@@ -25,19 +25,26 @@ export const WhatIsEeve: React.FC = () => {
         </div>
 
         {/* Section Label & Editorial Title */}
-        <div className="flex flex-col gap-6 max-w-3xl mb-24 text-left">
-          <p className="body-copy">
-            At EEVE, we believe intelligence should fit naturally into the way organisations already operate. Every business has its own way of serving customers, managing teams and running daily operations. That's why we never begin with technology—we begin by understanding your business.
-          </p>
-          <p className="body-copy">
-            For us, Workforce Intelligence starts with the conversations your business has every day. That's why every EEVE deployment is built around Voice AI that works naturally alongside your people, your processes and your customers.
-          </p>
-          <p className="body-copy">
-            Every solution we create is thoughtfully designed around your people, your processes and your customer experience, integrating seamlessly into the way your organisation already works.
-          </p>
-          <p className="body-copy">
-            From discovery and deployment to optimisation and long-term support, we work as a technology partner—not just a software provider—helping businesses adopt AI with confidence while keeping people at the centre of every experience.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <p className="editorial-pullquote text-left">
+              Every <span className="text-[#A31D1D] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
+            </p>
+          </div>
+          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 max-w-2xl text-left">
+            <p className="body-copy">
+              At EEVE, we believe intelligence should fit naturally into the way organisations already operate. Every business has its own way of serving customers, managing teams and running daily operations. That's why we never begin with technology—we begin by understanding your business.
+            </p>
+            <p className="body-copy">
+              For us, Workforce Intelligence starts with the conversations your business has every day. That's why every EEVE deployment is built around Voice AI that works naturally alongside your people, your processes and your customers.
+            </p>
+            <p className="body-copy">
+              Every solution we create is thoughtfully designed around your people, your processes and your customer experience, integrating seamlessly into the way your organisation already works.
+            </p>
+            <p className="body-copy">
+              From discovery and deployment to optimisation and long-term support, we work as a technology partner—not just a software provider—helping businesses adopt AI with confidence while keeping people at the centre of every experience.
+            </p>
+          </div>
         </div>
 
         {/* Large Quote at End */}
