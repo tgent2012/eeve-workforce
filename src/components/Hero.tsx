@@ -28,11 +28,11 @@ export const Hero: React.FC = () => {
               rectangleClassName="border-[#A31D1D] bg-[#A31D1D]/5 rounded-2xl border-2 md:border-4"
               pointerClassName="text-[#A31D1D] h-6 w-6 md:h-10 md:w-10"
             >
-              <span className="text-[#A31D1D] bg-gradient-to-r from-[#A31D1D] to-[#6B0F1A] bg-clip-text text-transparent px-4 pt-2 pb-4 inline-block">
+              <span className="text-[#A31D1D] dark:text-[#F87171] px-4 pt-2 pb-4 inline-block font-extrabold">
                 Intelligence
               </span>
             </PointerHighlight>
-            <span className="text-[#A31D1D] bg-gradient-to-r from-[#A31D1D] to-[#6B0F1A] bg-clip-text text-transparent">
+            <span className="text-[#A31D1D] dark:text-[#F87171] font-extrabold">
               Platform.
             </span>
           </span>
@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
           </a>
           <a href="#platform" className="block sm:inline-block">
             <LiquidButton size="xxl" className="font-semibold text-black tracking-wide flex items-center justify-center gap-2">
-              <span>Exploree eeve</span>
+              <span>Explore EEVE</span>
               <ArrowRight className="w-4.5 h-4.5" />
             </LiquidButton>
           </a>

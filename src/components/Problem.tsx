@@ -126,7 +126,7 @@ export const Problem: React.FC = () => {
     <section id="what-we-do" className="relative bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
       
       {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-10 w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(255,255,255,0.4)_0%,_transparent_70%)] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-10 w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(255,255,255,0.4)_0%,_transparent_70%)] pointer-events-none -z-10 dark:hidden" />
       <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(240,109,95,0.06)_0%,_transparent_75%)] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto">
@@ -281,7 +281,7 @@ export const Problem: React.FC = () => {
               
               {/* Radial gradient glow and faint grids */}
               <div className="absolute inset-0 grid-bg-light opacity-25 pointer-events-none" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent blur-3xl pointer-events-none -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent blur-3xl pointer-events-none -z-10 dark:hidden" />
               
               {/* Glass Top Edge Reflection Sweep Overlay */}
               <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[pulse_4s_infinite]" />
