@@ -75,7 +75,7 @@ export const EnterpriseTrust: React.FC = () => {
             animateBy="words"
             direction="bottom"
             className="section-heading mb-6 sm:mb-8 flex-wrap"
-            highlightClassName="text-[#A31D1D] !text-[#A31D1D] font-extrabold"
+            highlightClassName="text-[#A31D1D] dark:text-[#FBBF24] font-extrabold"
           />
           <p className="body-copy max-w-4xl">
             Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to your organisation. Every decision is independently verified, every action is traceable and every deployment is purpose-built around the way your business operates.

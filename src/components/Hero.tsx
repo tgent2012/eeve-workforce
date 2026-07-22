@@ -25,14 +25,14 @@ export const Hero: React.FC = () => {
           <span className="inline-flex items-baseline flex-wrap gap-x-2 sm:gap-x-3 gap-y-1.5 sm:gap-y-2 mt-1 sm:mt-2">
             <PointerHighlight
               containerClassName="inline-flex items-baseline"
-              rectangleClassName="border-[#A31D1D] bg-[#A31D1D]/5 rounded-xl sm:rounded-2xl border-2 md:border-4"
-              pointerClassName="text-[#A31D1D] h-5 w-5 sm:h-7 sm:w-7 md:h-10 md:w-10"
+              rectangleClassName="border-[#A31D1D] dark:border-[#FBBF24] bg-[#A31D1D]/5 dark:bg-[#FBBF24]/10 rounded-xl sm:rounded-2xl border-2 md:border-4"
+              pointerClassName="text-[#A31D1D] dark:text-[#FBBF24] h-5 w-5 sm:h-7 sm:w-7 md:h-10 md:w-10"
             >
-              <span className="text-[#A31D1D] !text-[#A31D1D] px-2.5 sm:px-4 pt-1.5 pb-2.5 inline-block font-extrabold">
+              <span className="text-[#A31D1D] dark:text-[#FBBF24] px-2.5 sm:px-4 pt-1.5 pb-2.5 inline-block font-extrabold">
                 Intelligence
               </span>
             </PointerHighlight>
-            <span className="text-[#A31D1D] !text-[#A31D1D] font-extrabold">
+            <span className="text-[#A31D1D] dark:text-[#FBBF24] font-extrabold">
               Platform.
             </span>
           </span>

@@ -43,7 +43,7 @@ export const FAQ: React.FC = () => {
             RESOURCES
           </span>
           <h2 className="section-heading text-balance mb-6 sm:mb-8">
-            Frequently Asked <span className="text-[#A31D1D] !text-[#A31D1D] font-extrabold">Questions</span>
+            Frequently Asked <span className="text-[#A31D1D] dark:text-[#FBBF24] font-extrabold">Questions</span>
           </h2>
           <ScrollReveal
             baseOpacity={0.08}

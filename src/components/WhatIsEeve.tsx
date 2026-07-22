@@ -42,7 +42,7 @@ export const WhatIsEeve: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start mb-16 sm:mb-20 lg:mb-24">
           <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
             <p className="editorial-pullquote text-left">
-              Every <span className="text-[#A31D1D] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
+              Every <span className="text-[#A31D1D] dark:text-[#FBBF24] font-bold">EEVE</span> deployment begins by understanding how your organisation works before intelligence is introduced.
             </p>
           </div>
           <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-4 sm:gap-6 max-w-2xl text-left">
@@ -68,8 +68,8 @@ export const WhatIsEeve: React.FC = () => {
             delay={60}
             animateBy="words"
             direction="bottom"
-            className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-[#111111] dark:text-[#111111] tracking-tight max-w-5xl mx-auto leading-tight justify-center flex-wrap"
-            highlightClassName="text-[#A31D1D] font-extrabold"
+            className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-[#111111] dark:text-white tracking-tight max-w-5xl mx-auto leading-tight justify-center flex-wrap"
+            highlightClassName="text-[#A31D1D] dark:text-[#FBBF24] font-extrabold"
           />
         </div>
 

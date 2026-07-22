@@ -443,14 +443,37 @@ html.dark .text-gray-500 {
   color: #CBD5E1 !important;
 }
 
-/* 3. Section Labels & Accent Red Highlights */
-html.dark .section-label {
-  color: #F87171 !important;
+/* 3. Section Labels & Accent Red Highlights (Transforms to Warm Golden Yellow in Dark Mode) */
+html.dark .section-label,
+html.dark .text-\[\#A31D1D\],
+html.dark .\!text-\[\#A31D1D\],
+html.dark .text-\[\#F06D5F\],
+html.dark .text-\[\#E53935\],
+html.dark [class*="text-[#A31D1D]"],
+html.dark [class*="text-[#F06D5F]"] {
+  color: #FBBF24 !important;
+}
+
+html.dark .border-\[\#A31D1D\],
+html.dark .border-\[\#F06D5F\] {
+  border-color: #FBBF24 !important;
+}
+
+html.dark .bg-\[\#A31D1D\],
+html.dark .bg-\[\#F06D5F\] {
+  background-color: #FBBF24 !important;
+  color: #09090B !important;
+}
+
+html.dark .bg-\[\#A31D1D\]\/10,
+html.dark .bg-\[\#F06D5F\]\/10 {
+  background-color: rgba(251, 191, 36, 0.15) !important;
+  border-color: rgba(251, 191, 36, 0.3) !important;
 }
 
 html.dark .from-\[\#A31D1D\].to-\[\#6B0F1A\] {
-  --tw-gradient-from: #F87171 var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: #EF4444 var(--tw-gradient-to-position) !important;
+  --tw-gradient-from: #FBBF24 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: #F59E0B var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 

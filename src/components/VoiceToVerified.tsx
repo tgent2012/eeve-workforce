@@ -129,7 +129,7 @@ export const VoiceToVerified: React.FC = () => {
                     animateBy="words"
                     direction="bottom"
                     className="section-heading flex-wrap"
-                    highlightClassName="text-[#A31D1D] !text-[#A31D1D] font-extrabold"
+                    highlightClassName="text-[#A31D1D] dark:text-[#FBBF24] font-extrabold"
                   />
                 </div>
                 

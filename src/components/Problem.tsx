@@ -143,7 +143,7 @@ export const Problem: React.FC = () => {
               animateBy="words"
               direction="bottom"
               className="section-heading mb-6 sm:mb-8 flex-wrap"
-              highlightClassName="text-[#A31D1D] !text-[#A31D1D] font-extrabold"
+              highlightClassName="text-[#A31D1D] dark:text-[#FBBF24] font-extrabold"
             />
           </div>
           <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-4 sm:gap-6 text-left">

@@ -57,7 +57,7 @@ export const PremiumCTA: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] !text-[#111111] mt-1.5 sm:mt-2 leading-[1.15] sm:leading-[1.1]"
           >
-            <span className="italic font-serif text-[#A31D1D] !text-[#A31D1D] font-extrabold pr-1">
+            <span className="italic font-serif text-[#A31D1D] dark:text-[#FBBF24] font-extrabold pr-1">
               Are you?
             </span>
           </motion.h2>
