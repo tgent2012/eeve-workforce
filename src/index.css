@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", sans-serif;
   
@@ -443,14 +445,22 @@ html.dark .text-gray-500 {
   color: #CBD5E1 !important;
 }
 
-/* 3. Section Labels & Accent Red Highlights (Transforms to Warm Golden Yellow in Dark Mode) */
+/* 3. Section Labels & Accent Red Highlights (Red in Light Mode, Warm Golden Yellow in Dark Mode) */
+html:not(.dark) .section-label,
+html:not(.dark) .text-\[\#A31D1D\],
+html:not(.dark) .\!text-\[\#A31D1D\] {
+  color: #A31D1D !important;
+}
+
+html:not(.dark) .border-\[\#A31D1D\] {
+  border-color: #A31D1D !important;
+}
+
 html.dark .section-label,
 html.dark .text-\[\#A31D1D\],
 html.dark .\!text-\[\#A31D1D\],
 html.dark .text-\[\#F06D5F\],
-html.dark .text-\[\#E53935\],
-html.dark [class*="text-[#A31D1D]"],
-html.dark [class*="text-[#F06D5F]"] {
+html.dark .text-\[\#E53935\] {
   color: #FBBF24 !important;
 }
 
