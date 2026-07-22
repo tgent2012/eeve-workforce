@@ -82,20 +82,20 @@ export const EnterpriseTrust: React.FC = () => {
           </p>
         </div>
 
-        {/* Framer-styled Interactive Tabs Card */}
+        {/* Framer-styled Interactive Liquid Glass Tabs Container */}
         <div 
-          className="w-full bg-white/28 backdrop-blur-[40px] saturate-[180%] border border-white/55 dark:border-white/15 rounded-[28px] sm:rounded-[36px] p-4 sm:p-6 lg:p-8 shadow-[0_35px_80px_rgba(15,23,42,0.1),0_14px_35px_rgba(15,23,42,0.06),inset_0_2px_8px_rgba(255,255,255,0.65)] relative overflow-hidden"
+          className="w-full bg-white/35 backdrop-blur-[40px] saturate-[180%] border border-white/60 rounded-[28px] sm:rounded-[36px] p-4 sm:p-6 lg:p-8 shadow-[0_30px_70px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.7)] relative overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Glass Top Edge Reflection Sweep */}
-          <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/60 to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/70 to-transparent z-20 pointer-events-none" />
 
           {/* Desktop & Tablet Layout (>=1024px) */}
           <div className="hidden lg:grid grid-cols-12 gap-8 items-center min-h-[540px]">
             
-            {/* Left Column: Interactive Tab Accordion List */}
-            <div className="col-span-5 flex flex-col justify-center gap-3">
+            {/* Left Column: Interactive Liquid Glass Tab Accordion List */}
+            <div className="col-span-5 flex flex-col justify-center gap-3.5">
               {trusts.map((item, idx) => {
                 const isActive = activeTab === idx;
                 return (
@@ -105,23 +105,23 @@ export const EnterpriseTrust: React.FC = () => {
                       setActiveTab(idx);
                       setIsPaused(true);
                     }}
-                    className={`relative cursor-pointer rounded-2xl p-5 transition-all duration-300 border ${
+                    className={`relative cursor-pointer rounded-[20px] p-5 transition-all duration-300 border ${
                       isActive 
-                        ? "bg-white/70 dark:bg-neutral-900/80 border-white/80 dark:border-neutral-700 shadow-md" 
-                        : "bg-white/20 dark:bg-neutral-900/30 border-transparent hover:bg-white/40 dark:hover:bg-neutral-900/50"
+                        ? "bg-white/60 backdrop-blur-[32px] border-white/80 shadow-[0_16px_36px_rgba(15,23,42,0.08),inset_0_1px_1.5px_rgba(255,255,255,0.8)] -translate-y-0.5" 
+                        : "bg-white/35 backdrop-blur-[24px] border-white/50 hover:bg-white/45 shadow-[0_8px_20px_rgba(15,23,42,0.03)]"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded-md ${
+                      <div className="flex items-center gap-3.5">
+                        <span className={`w-7 h-7 rounded-full font-mono font-bold text-xs flex items-center justify-center transition-all ${
                           isActive 
-                            ? "bg-[#A31D1D] text-white" 
-                            : "bg-neutral-200/60 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
+                            ? "bg-[#A31D1D] text-white shadow-xs" 
+                            : "bg-slate-900/10 text-[#111111]"
                         }`}>
                           {item.number}
                         </span>
-                        <h3 className={`text-base sm:text-lg font-bold transition-colors ${
-                          isActive ? "text-[#111111] dark:text-white" : "text-neutral-700 dark:text-neutral-300"
+                        <h3 className={`text-base sm:text-lg font-bold tracking-tight transition-colors ${
+                          isActive ? "text-[#111111] !text-[#111111]" : "text-slate-700 hover:text-[#111111]"
                         }`}>
                           {item.title}
                         </h3>
@@ -138,24 +138,24 @@ export const EnterpriseTrust: React.FC = () => {
                           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                           className="overflow-hidden"
                         >
-                          <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 font-sans mt-3 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-[#334155] !text-[#334155] font-sans font-medium mt-3.5 leading-relaxed">
                             {item.desc}
                           </p>
 
                           {/* Footer Badges */}
-                          <div className="mt-4 pt-3 border-t border-neutral-200/60 dark:border-neutral-800 flex items-center justify-between text-[9px] font-mono">
-                            <span className="bg-white/50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 rounded-full px-2.5 py-0.5 font-semibold text-neutral-600 dark:text-neutral-400 tracking-wider">
+                          <div className="mt-4 pt-3.5 border-t border-white/60 flex items-center justify-between text-[9.5px] font-mono">
+                            <span className="bg-white/80 border border-white/90 shadow-xs rounded-full px-3 py-1 font-bold text-slate-700 tracking-wider">
                               {item.footerLeft}
                             </span>
-                            <span className="bg-[#A31D1D]/10 dark:bg-[#F87171]/15 border border-[#A31D1D]/20 rounded-full px-2.5 py-0.5 font-bold text-[#A31D1D] dark:text-[#F87171] tracking-wider uppercase">
+                            <span className="bg-[#A31D1D]/10 border border-[#A31D1D]/25 shadow-xs rounded-full px-3 py-1 font-bold text-[#A31D1D] !text-[#A31D1D] tracking-wider uppercase">
                               {item.footerRight}
                             </span>
                           </div>
 
                           {/* Progress Line Bar */}
-                          <div className="w-full h-1 bg-neutral-200/60 dark:bg-neutral-800 rounded-full mt-3 overflow-hidden">
+                          <div className="w-full h-1 bg-slate-200/70 rounded-full mt-3.5 overflow-hidden">
                             <motion.div
-                              className="h-full bg-[#A31D1D] dark:bg-[#F87171]"
+                              className="h-full bg-[#A31D1D] !bg-[#A31D1D]"
                               initial={{ width: "0%" }}
                               animate={{ width: "100%" }}
                               transition={{ duration: isPaused ? 0 : 6, ease: "linear" }}
@@ -171,7 +171,7 @@ export const EnterpriseTrust: React.FC = () => {
             </div>
 
             {/* Right Column: High-Res Dynamic Image Display */}
-            <div className="col-span-7 h-[500px] rounded-[24px] overflow-hidden relative border border-white/60 dark:border-neutral-800 shadow-lg">
+            <div className="col-span-7 h-[500px] rounded-[24px] overflow-hidden relative border border-white/70 shadow-[0_20px_50px_rgba(15,23,42,0.1)]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -186,14 +186,14 @@ export const EnterpriseTrust: React.FC = () => {
                     alt={trusts[activeTab].title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
 
                   {/* Floating Overlay Badge on Image */}
                   <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white font-sans z-10">
-                    <span className="text-xs font-mono font-bold tracking-widest uppercase bg-black/40 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full">
+                    <span className="text-xs font-mono font-bold tracking-widest uppercase bg-black/40 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full shadow-sm">
                       {trusts[activeTab].number} // {trusts[activeTab].title}
                     </span>
-                    <span className="text-[10px] font-mono tracking-wider bg-[#A31D1D]/80 backdrop-blur-md px-3 py-1 rounded-full font-bold uppercase">
+                    <span className="text-[10px] font-mono tracking-wider bg-[#A31D1D] backdrop-blur-md px-3.5 py-1.5 rounded-full font-bold uppercase shadow-sm">
                       {trusts[activeTab].footerRight}
                     </span>
                   </div>
@@ -216,11 +216,11 @@ export const EnterpriseTrust: React.FC = () => {
                     onClick={() => setActiveTab(idx)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${
                       isActive 
-                        ? "bg-[#A31D1D] text-white border-[#A31D1D] shadow-md" 
-                        : "bg-white/40 dark:bg-neutral-800/60 text-neutral-700 dark:text-neutral-300 border-white/60 dark:border-neutral-700"
+                        ? "bg-[#A31D1D] !bg-[#A31D1D] text-white border-[#A31D1D] shadow-md" 
+                        : "bg-white/50 backdrop-blur-md text-[#111111] !text-[#111111] border-white/70 hover:bg-white/70"
                     }`}
                   >
-                    <span className="font-mono text-[10px] opacity-80">{item.number}</span>
+                    <span className="font-mono text-[10px] opacity-90">{item.number}</span>
                     <span>{item.title}</span>
                   </button>
                 );
@@ -228,7 +228,7 @@ export const EnterpriseTrust: React.FC = () => {
             </div>
 
             {/* Active Card Image & Details */}
-            <div className="bg-white/60 dark:bg-neutral-900/80 border border-white/80 dark:border-neutral-800 rounded-[24px] overflow-hidden shadow-md flex flex-col">
+            <div className="bg-white/50 backdrop-blur-[32px] border border-white/70 rounded-[24px] overflow-hidden shadow-[0_16px_36px_rgba(15,23,42,0.08)] flex flex-col">
               <div className="relative h-[220px] sm:h-[260px] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
@@ -245,18 +245,18 @@ export const EnterpriseTrust: React.FC = () => {
               </div>
 
               <div className="p-6 flex flex-col gap-3 text-left">
-                <h3 className="card-title text-xl font-bold">
+                <h3 className="card-title text-xl font-bold text-[#111111] !text-[#111111]">
                   {trusts[activeTab].title}
                 </h3>
-                <p className="card-body text-sm leading-relaxed">
+                <p className="card-body text-sm text-[#334155] !text-[#334155] font-medium leading-relaxed">
                   {trusts[activeTab].desc}
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-neutral-200/60 dark:border-neutral-800 flex items-center justify-between text-[9px] font-mono">
-                  <span className="bg-white/60 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-full px-3 py-1 font-semibold text-neutral-600 dark:text-neutral-400">
+                <div className="mt-4 pt-4 border-t border-white/60 flex items-center justify-between text-[9.5px] font-mono">
+                  <span className="bg-white/80 border border-white/90 rounded-full px-3 py-1 font-bold text-slate-700 shadow-xs">
                     {trusts[activeTab].footerLeft}
                   </span>
-                  <span className="bg-[#A31D1D]/10 dark:bg-[#F87171]/15 border border-[#A31D1D]/20 rounded-full px-3 py-1 font-bold text-[#A31D1D] dark:text-[#F87171] uppercase">
+                  <span className="bg-[#A31D1D]/10 border border-[#A31D1D]/25 rounded-full px-3 py-1 font-bold text-[#A31D1D] !text-[#A31D1D] uppercase shadow-xs">
                     {trusts[activeTab].footerRight}
                   </span>
                 </div>
