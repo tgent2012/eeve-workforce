@@ -7,7 +7,7 @@ export const WhatIsEeve: React.FC = () => {
     { text: "don't", highlight: false },
     { text: "believe", highlight: false },
     { text: "businesses", highlight: false },
-    { text: "should", highlight: false },
+    { text: "should", highlight: true },
     { text: "adapt", highlight: true },
     { text: "to", highlight: true },
     { text: "AI.", highlight: true },
@@ -68,8 +68,8 @@ export const WhatIsEeve: React.FC = () => {
             delay={60}
             animateBy="words"
             direction="bottom"
-            className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-[#111111] dark:text-white tracking-tight max-w-5xl mx-auto leading-tight justify-center flex-wrap"
-            highlightClassName="text-[#A31D1D] dark:text-[#F87171] font-extrabold"
+            className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-[#111111] dark:text-[#111111] tracking-tight max-w-5xl mx-auto leading-tight justify-center flex-wrap"
+            highlightClassName="text-[#A31D1D] font-extrabold"
           />
         </div>
 
