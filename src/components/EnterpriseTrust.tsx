@@ -44,13 +44,13 @@ export const EnterpriseTrust: React.FC = () => {
   return (
     <section 
       id="why-choose-eeve" 
-      className="bg-transparent relative py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden"
+      className="bg-transparent relative py-16 sm:py-24 lg:py-32 px-5 sm:px-10 lg:px-16 xl:px-24 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Editorial Heading */}
-        <div className="max-w-3xl mb-24 text-left">
-          <span className="section-label mb-4 block">
+        <div className="max-w-3xl mb-12 sm:mb-16 lg:mb-24 text-left">
+          <span className="section-label mb-3 sm:mb-4 block">
             WHY BUSINESSES CHOOSE EEVE
           </span>
           <BlurText
@@ -58,8 +58,8 @@ export const EnterpriseTrust: React.FC = () => {
             delay={40}
             animateBy="words"
             direction="bottom"
-            className="section-heading mb-8 flex-wrap"
-            highlightClassName="text-[#A31D1D] font-extrabold"
+            className="section-heading mb-6 sm:mb-8 flex-wrap"
+            highlightClassName="text-[#A31D1D] dark:text-[#F87171] font-extrabold"
           />
           <p className="body-copy max-w-4xl">
             Businesses choose EEVE because enterprise AI demands more than intelligent conversations. It demands trust, accountability and technology that adapts to your organisation. Every decision is independently verified, every action is traceable and every deployment is purpose-built around the way your business operates.
@@ -67,7 +67,7 @@ export const EnterpriseTrust: React.FC = () => {
         </div>
 
         {/* Floating Liquid Glass Editorial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {trusts.map((trust, idx) => (
             <motion.div
               key={idx}
@@ -80,7 +80,7 @@ export const EnterpriseTrust: React.FC = () => {
                 scale: 1.015,
                 transition: { type: "spring", stiffness: 120, damping: 16 }
               }}
-              className="bg-white/28 backdrop-blur-[38px] saturate-[180%] border border-white/55 rounded-[30px] shadow-[0_35px_80px_rgba(15,23,42,0.12),0_14px_35px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.65)] hover:bg-white/35 transition-all duration-500 group flex flex-col min-h-[500px] text-left relative overflow-hidden"
+              className="bg-white/28 backdrop-blur-[38px] saturate-[180%] border border-white/55 rounded-[24px] sm:rounded-[30px] shadow-[0_35px_80px_rgba(15,23,42,0.12),0_14px_35px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.65)] hover:bg-white/35 transition-all duration-500 group flex flex-col min-h-[420px] sm:min-h-[460px] lg:min-h-[500px] text-left relative overflow-hidden"
             >
               {/* Glass Top Edge Reflection Sweep */}
               <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/50 to-transparent z-20 pointer-events-none" />

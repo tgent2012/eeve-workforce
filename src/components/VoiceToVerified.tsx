@@ -112,15 +112,15 @@ export const VoiceToVerified: React.FC = () => {
   }, []);
 
   return (
-    <section id="platform" className="bg-transparent pt-0 pb-24 px-4 sm:px-12 lg:px-16 xl:px-24 overflow-x-hidden">
+    <section id="platform" className="bg-transparent pt-0 pb-16 sm:pb-24 px-5 sm:px-10 lg:px-16 xl:px-24 overflow-x-hidden">
       <div className="max-w-7xl mx-auto flex flex-col relative">
         <ContainerScroll
           titleComponent={
-            <div className="flex flex-col text-left mb-16">
+            <div className="flex flex-col text-left mb-10 sm:mb-16">
               {/* Editorial Title Block */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 text-left border-b border-[#EAEAEA] pb-8 mb-8">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 sm:gap-6 text-left border-b border-[#EAEAEA] pb-6 sm:pb-8 mb-6 sm:mb-8">
                 <div>
-                  <span className="section-label mb-4 block">
+                  <span className="section-label mb-3 sm:mb-4 block">
                     SEE EEVE IN ACTION
                   </span>
                   <BlurText
@@ -129,7 +129,7 @@ export const VoiceToVerified: React.FC = () => {
                     animateBy="words"
                     direction="bottom"
                     className="section-heading flex-wrap"
-                    highlightClassName="text-[#A31D1D] font-extrabold"
+                    highlightClassName="text-[#A31D1D] dark:text-[#F87171] font-extrabold"
                   />
                 </div>
                 

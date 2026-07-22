@@ -8,11 +8,11 @@ export const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-screen flex flex-col justify-center items-start text-[#111111] overflow-hidden bg-transparent px-6 sm:px-12 lg:px-16 xl:px-24 py-32"
+      className="relative w-full min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex flex-col justify-center items-start text-[#111111] overflow-hidden bg-transparent px-5 sm:px-10 lg:px-16 xl:px-24 py-20 sm:py-28 lg:py-32"
     >
 
       {/* Main Hero Content */}
-      <div className="max-w-4xl z-20 flex flex-col items-start gap-8 mt-10 lg:mt-0 relative select-none">
+      <div className="max-w-4xl z-20 flex flex-col items-start gap-6 sm:gap-8 mt-6 sm:mt-10 lg:mt-0 relative select-none">
         
         {/* Headline */}
         <motion.h1
@@ -22,13 +22,13 @@ export const Hero: React.FC = () => {
           className="hero-heading text-balance"
         >
           The Workforce <br />
-          <span className="inline-flex items-baseline flex-wrap gap-x-3 gap-y-2 mt-2">
+          <span className="inline-flex items-baseline flex-wrap gap-x-2 sm:gap-x-3 gap-y-1.5 sm:gap-y-2 mt-1 sm:mt-2">
             <PointerHighlight
               containerClassName="inline-flex items-baseline"
-              rectangleClassName="border-[#A31D1D] bg-[#A31D1D]/5 rounded-2xl border-2 md:border-4"
-              pointerClassName="text-[#A31D1D] h-6 w-6 md:h-10 md:w-10"
+              rectangleClassName="border-[#A31D1D] bg-[#A31D1D]/5 rounded-xl sm:rounded-2xl border-2 md:border-4"
+              pointerClassName="text-[#A31D1D] h-5 w-5 sm:h-7 sm:w-7 md:h-10 md:w-10"
             >
-              <span className="text-[#A31D1D] dark:text-[#F87171] px-4 pt-2 pb-4 inline-block font-extrabold">
+              <span className="text-[#A31D1D] dark:text-[#F87171] px-2.5 sm:px-4 pt-1.5 pb-2.5 inline-block font-extrabold">
                 Intelligence
               </span>
             </PointerHighlight>
@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
         </motion.h1>
 
         {/* Sub Heading & Supporting Copy */}
-        <div className="flex flex-col gap-6 max-w-2xl mt-8">
+        <div className="flex flex-col gap-4 sm:gap-6 max-w-2xl mt-4 sm:mt-6 lg:mt-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

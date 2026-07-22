@@ -68,12 +68,12 @@ export const IndustryBlueprints: React.FC = () => {
   ];
 
   return (
-    <section id="industries" className="relative w-full bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden select-none text-left">
-      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative">
+    <section id="industries" className="relative w-full bg-transparent py-16 sm:py-24 lg:py-32 px-5 sm:px-10 lg:px-16 xl:px-24 overflow-hidden select-none text-left">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12 lg:gap-16 relative">
         
         {/* Editorial Heading */}
         <div className="max-w-3xl">
-          <span className="section-label mb-4 block">
+          <span className="section-label mb-3 sm:mb-4 block">
             BUILT AROUND YOUR BUSINESS
           </span>
           <BlurText
@@ -81,10 +81,10 @@ export const IndustryBlueprints: React.FC = () => {
             delay={40}
             animateBy="words"
             direction="bottom"
-            className="section-heading mb-8 flex-wrap"
-            highlightClassName="text-[#A31D1D] font-extrabold"
+            className="section-heading mb-6 sm:mb-8 flex-wrap"
+            highlightClassName="text-[#A31D1D] dark:text-[#F87171] font-extrabold"
           />
-          <div className="flex flex-col gap-6 max-w-2xl text-left">
+          <div className="flex flex-col gap-4 sm:gap-6 max-w-2xl text-left">
             <p className="editorial-statement leading-tight">
               Every industry works differently. EEVE is designed to adapt.
             </p>

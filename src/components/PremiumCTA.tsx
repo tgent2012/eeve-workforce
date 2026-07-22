@@ -7,7 +7,7 @@ export const PremiumCTA: React.FC = () => {
   return (
     <section 
       id="contact" 
-      className="relative w-full py-32 px-6 sm:px-12 lg:px-16 xl:px-24 bg-transparent overflow-hidden flex flex-col items-center justify-center text-center"
+      className="relative w-full py-16 sm:py-24 lg:py-32 px-5 sm:px-10 lg:px-16 xl:px-24 bg-transparent overflow-hidden flex flex-col items-center justify-center text-center"
     >
       <div className="max-w-4xl z-10 flex flex-col items-center gap-6 relative">
         
@@ -28,7 +28,7 @@ export const PremiumCTA: React.FC = () => {
               strokeWidth="2.2" 
               strokeLinecap="round" 
               strokeLinejoin="round" 
-              className="h-3.5 w-3.5 text-[#A31D1D] animate-pulse"
+              className="h-3.5 w-3.5 text-[#A31D1D] dark:text-[#F87171] animate-pulse"
             >
               <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
               <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
@@ -46,7 +46,7 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-[#111111] tracking-tight leading-[1.1]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#111111] dark:text-white tracking-tight leading-[1.15] sm:leading-[1.1]"
           >
             EEVE is ready to accelerate your business.
           </motion.h2>
@@ -55,7 +55,7 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-black tracking-tight text-[#111111] dark:text-white mt-2 leading-[1.1]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] dark:text-white mt-1.5 sm:mt-2 leading-[1.15] sm:leading-[1.1]"
           >
             <span className="italic font-serif text-[#A31D1D] dark:text-[#F87171] font-extrabold pr-1">
               Are you?

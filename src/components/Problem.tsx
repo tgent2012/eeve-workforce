@@ -123,7 +123,7 @@ export const Problem: React.FC = () => {
   ];
 
   return (
-    <section id="what-we-do" className="relative bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
+    <section id="what-we-do" className="relative bg-transparent py-16 sm:py-24 lg:py-32 px-5 sm:px-10 lg:px-16 xl:px-24 overflow-hidden">
       
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-10 w-[350px] h-[350px] bg-[radial-gradient(circle,_rgba(255,255,255,0.4)_0%,_transparent_70%)] pointer-events-none -z-10 dark:hidden" />
@@ -132,9 +132,9 @@ export const Problem: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Section Title & Storytelling */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start mb-16 sm:mb-20 lg:mb-24">
           <div className="lg:col-span-5">
-            <span className="section-label mb-4 block">
+            <span className="section-label mb-3 sm:mb-4 block">
               WHAT WE DO
             </span>
             <BlurText
@@ -142,11 +142,11 @@ export const Problem: React.FC = () => {
               delay={40}
               animateBy="words"
               direction="bottom"
-              className="section-heading mb-8 flex-wrap"
-              highlightClassName="text-[#A31D1D] font-extrabold"
+              className="section-heading mb-6 sm:mb-8 flex-wrap"
+              highlightClassName="text-[#A31D1D] dark:text-[#F87171] font-extrabold"
             />
           </div>
-          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-6 text-left">
+          <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-4 sm:gap-6 text-left">
             <p className="editorial-statement block">
               Every day, organisations answer hundreds of customer phone calls. Every enquiry, booking, appointment, support request and follow-up shapes how customers experience your business.
             </p>
@@ -157,7 +157,7 @@ export const Problem: React.FC = () => {
         </div>
 
         {/* Apple visionOS Glassmorphism Container */}
-        <div className="bg-white/32 backdrop-blur-[40px] saturate-[180%] border border-white/45 rounded-[32px] p-6 sm:p-12 lg:p-16 xl:p-24 shadow-[0_30px_80px_rgba(15,23,42,0.1),0_10px_35px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.55)] relative overflow-hidden before:absolute before:inset-0 before:opacity-[0.02] before:pointer-events-none before:bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20200%20200%22%20xmlns%3D%22http%3D%22www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22noiseFilter%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%20%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noiseFilter)%22%20%2F%3E%3C%2Fsvg%3E')]">
+        <div className="bg-white/32 backdrop-blur-[40px] saturate-[180%] border border-white/45 rounded-[24px] sm:rounded-[32px] p-5 sm:p-10 lg:p-14 xl:p-20 shadow-[0_30px_80px_rgba(15,23,42,0.1),0_10px_35px_rgba(15,23,42,0.08),inset_0_2px_8px_rgba(255,255,255,0.55)] relative overflow-hidden before:absolute before:inset-0 before:opacity-[0.02] before:pointer-events-none before:bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20200%20200%22%20xmlns%3D%22http%3D%22www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22noiseFilter%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%20%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noiseFilter)%22%20%2F%3E%3C%2Fsvg%3E')]">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center relative z-10">
             

@@ -14,14 +14,14 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-transparent pt-20 pb-10 px-6 sm:px-12 lg:px-16 xl:px-24">
+    <footer className="bg-transparent pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 px-5 sm:px-10 lg:px-16 xl:px-24">
       <div className="max-w-7xl mx-auto">
         
-        {/* Panorama-styled 4 Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16 text-left">
+        {/* Panorama-styled Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16 text-left">
           
           {/* Column 1: Brand Info (Spans 2 columns on desktop) */}
-          <div className="col-span-1 md:col-span-2 flex flex-col items-start gap-6">
+          <div className="col-span-2 md:col-span-2 flex flex-col items-start gap-4 sm:gap-6">
             <Logo className="text-[#111111]" />
 
             

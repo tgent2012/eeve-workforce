@@ -34,16 +34,16 @@ export const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="bg-transparent py-32 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden">
+    <section id="faq" className="bg-transparent py-16 sm:py-24 lg:py-32 px-5 sm:px-10 lg:px-16 xl:px-24 overflow-hidden">
       <div className="max-w-4xl mx-auto text-left">
         
         {/* Editorial Heading */}
-        <div className="mb-20">
-          <span className="section-label mb-4 block">
+        <div className="mb-12 sm:mb-16 lg:mb-20">
+          <span className="section-label mb-3 sm:mb-4 block">
             RESOURCES
           </span>
-          <h2 className="section-heading text-balance mb-8">
-            Frequently Asked <span className="text-[#A31D1D]">Questions</span>
+          <h2 className="section-heading text-balance mb-6 sm:mb-8">
+            Frequently Asked <span className="text-[#A31D1D] dark:text-[#F87171]">Questions</span>
           </h2>
           <ScrollReveal
             baseOpacity={0.08}
