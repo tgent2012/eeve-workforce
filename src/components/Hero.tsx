@@ -28,11 +28,11 @@ export const Hero: React.FC = () => {
               rectangleClassName="border-[#A31D1D] bg-[#A31D1D]/5 rounded-xl sm:rounded-2xl border-2 md:border-4"
               pointerClassName="text-[#A31D1D] h-5 w-5 sm:h-7 sm:w-7 md:h-10 md:w-10"
             >
-              <span className="text-[#A31D1D] dark:text-[#F87171] px-2.5 sm:px-4 pt-1.5 pb-2.5 inline-block font-extrabold">
+              <span className="text-[#A31D1D] !text-[#A31D1D] px-2.5 sm:px-4 pt-1.5 pb-2.5 inline-block font-extrabold">
                 Intelligence
               </span>
             </PointerHighlight>
-            <span className="text-[#A31D1D] dark:text-[#F87171] font-extrabold">
+            <span className="text-[#A31D1D] !text-[#A31D1D] font-extrabold">
               Platform.
             </span>
           </span>
