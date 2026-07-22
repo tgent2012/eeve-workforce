@@ -456,6 +456,16 @@ html:not(.dark) .border-\[\#A31D1D\] {
   border-color: #A31D1D !important;
 }
 
+html:not(.dark) .pointer-highlight-rect {
+  border-color: #A31D1D !important;
+  background-color: rgba(163, 29, 29, 0.08) !important;
+}
+
+html:not(.dark) .pointer-highlight-cursor {
+  color: #A31D1D !important;
+  fill: #A31D1D !important;
+}
+
 html.dark .section-label,
 html.dark .text-\[\#A31D1D\],
 html.dark .\!text-\[\#A31D1D\],
@@ -467,6 +477,16 @@ html.dark .text-\[\#E53935\] {
 html.dark .border-\[\#A31D1D\],
 html.dark .border-\[\#F06D5F\] {
   border-color: #FBBF24 !important;
+}
+
+html.dark .pointer-highlight-rect {
+  border-color: #FBBF24 !important;
+  background-color: rgba(251, 191, 36, 0.12) !important;
+}
+
+html.dark .pointer-highlight-cursor {
+  color: #FBBF24 !important;
+  fill: #FBBF24 !important;
 }
 
 html.dark .bg-\[\#A31D1D\],
