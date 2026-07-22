@@ -93,6 +93,8 @@ export const EnterpriseTrust: React.FC = () => {
                 <img
                   src={trust.image}
                   alt={trust.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />

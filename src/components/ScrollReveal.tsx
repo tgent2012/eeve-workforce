@@ -52,46 +52,44 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     const scroller = scrollContainerRef && scrollContainerRef.current ? scrollContainerRef.current : window;
 
-    gsap.fromTo(
-      el,
-      { transformOrigin: "0% 50%", rotate: baseRotation },
-      {
-        ease: "none",
-        rotate: 0,
-        scrollTrigger: {
-          trigger: el,
-          scroller,
-          start: "top bottom",
-          end: rotationEnd,
-          scrub: true
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { transformOrigin: "0% 50%", rotate: baseRotation },
+        {
+          ease: "none",
+          rotate: 0,
+          scrollTrigger: {
+            trigger: el,
+            scroller,
+            start: "top bottom",
+            end: rotationEnd,
+            scrub: true
+          }
         }
-      }
-    );
+      );
 
-    const wordElements = el.querySelectorAll(".word");
+      const wordElements = el.querySelectorAll(".word");
 
-    gsap.fromTo(
-      wordElements,
-      { opacity: baseOpacity, willChange: "opacity" },
-      {
-        ease: "none",
-        opacity: 1,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: el,
-          scroller,
-          start: "top bottom-=20%",
-          end: wordAnimationEnd,
-          scrub: true
+      gsap.fromTo(
+        wordElements,
+        { opacity: baseOpacity },
+        {
+          ease: "none",
+          opacity: 1,
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: el,
+            scroller,
+            start: "top bottom-=20%",
+            end: wordAnimationEnd,
+            scrub: true
+          }
         }
-      }
-    );
+      );
+    }, el);
 
-    // Scroll-scrubbed CSS filter blurs are disabled to prevent expensive repaint cycles and guarantee 60fps scroll.
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+    return () => ctx.revert();
   }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
 
   return (

@@ -22,41 +22,60 @@ function App() {
 
   // Scroll spy effect to keep LineSidebar selection in sync with current viewport section
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight / 3;
-      
-      // Determine active section index
-      let currentSection = 0;
-      for (let i = 0; i < sectionIds.length; i++) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            currentSection = i;
-            break;
-          }
-        }
-      }
-      setActiveSection(currentSection);
+    let ticking = false;
+    let cachedOffsets: { top: number; bottom: number }[] = [];
 
-      // Show/hide scroll top button
-      if (window.scrollY > 400) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-
-      // Check if we are near the bottom of the page (near PremiumCTA which is dark).
-      const docHeight = document.documentElement.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const isNearBottom = (window.scrollY + windowHeight) > (docHeight - 650);
-
-      setIsDarkBg(isNearBottom);
+    const updateOffsets = () => {
+      cachedOffsets = sectionIds.map((id) => {
+        const el = document.getElementById(id);
+        if (!el) return { top: 0, bottom: 0 };
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        return { top, bottom: top + el.offsetHeight };
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    updateOffsets();
+    window.addEventListener("resize", updateOffsets, { passive: true });
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const scrollPos = scrollY + window.innerHeight / 3;
+
+          let currentSection = 0;
+          for (let i = 0; i < cachedOffsets.length; i++) {
+            const { top, bottom } = cachedOffsets[i];
+            if (scrollPos >= top && scrollPos < bottom) {
+              currentSection = i;
+              break;
+            }
+          }
+
+          setActiveSection((prev) => (prev !== currentSection ? currentSection : prev));
+          setShowScrollTop((prev) => {
+            const shouldShow = scrollY > 400;
+            return prev !== shouldShow ? shouldShow : prev;
+          });
+
+          const docHeight = document.documentElement.scrollHeight;
+          const windowHeight = window.innerHeight;
+          const isNearBottom = scrollY + windowHeight > docHeight - 650;
+
+          setIsDarkBg((prev) => (prev !== isNearBottom ? isNearBottom : prev));
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateOffsets);
+    };
   }, []);
 
   const handleItemClick = (index: number) => {

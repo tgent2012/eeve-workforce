@@ -173,8 +173,10 @@ export const IndustryBlueprints: React.FC = () => {
                   {/* Industry Image */}
                   <img
                     src={ind.image}
-                    className="w-full h-full object-cover select-none pointer-events-none"
                     alt={ind.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover select-none pointer-events-none"
                   />
                 </motion.div>
               );

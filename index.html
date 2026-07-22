@@ -11,7 +11,7 @@
   </head>
   <body class="bg-[#FFFFFF] text-[#111111] selection:bg-[#A31D1D]/10 selection:text-[#A31D1D] relative min-h-screen overflow-x-hidden">
     <!-- Global Interactive Reveal Background Layer -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div id="interactive-bg" class="fixed inset-0 overflow-hidden pointer-events-none z-0">
       <div class="bg-layer layer-sharp"></div>
       <div class="bg-layer layer-mist"></div>
       <div class="noise-overlay"></div>
@@ -21,28 +21,47 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <script type="text/javascript">
-      let mouseX = window.innerWidth / 2;
-      let mouseY = window.innerHeight / 2;
+      (function() {
+        const bgEl = document.getElementById("interactive-bg");
+        if (!bgEl) return;
 
-      let currentX = mouseX;
-      let currentY = mouseY;
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let currentX = mouseX;
+        let currentY = mouseY;
+        let isAnimating = false;
 
-      document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
+        document.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (!isAnimating) {
+            isAnimating = true;
+            requestAnimationFrame(animate);
+          }
+        }, { passive: true });
 
-      function animate() {
-        currentX += (mouseX - currentX) * 0.12;
-        currentY += (mouseY - currentY) * 0.12;
+        function animate() {
+          const dx = mouseX - currentX;
+          const dy = mouseY - currentY;
 
-        document.documentElement.style.setProperty("--cursor-x", currentX + "px");
-        document.documentElement.style.setProperty("--cursor-y", currentY + "px");
+          if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+            currentX = mouseX;
+            currentY = mouseY;
+            bgEl.style.setProperty("--cursor-x", currentX + "px");
+            bgEl.style.setProperty("--cursor-y", currentY + "px");
+            isAnimating = false;
+            return;
+          }
 
-        requestAnimationFrame(animate);
-      }
+          currentX += dx * 0.12;
+          currentY += dy * 0.12;
 
-      animate();
+          bgEl.style.setProperty("--cursor-x", currentX.toFixed(1) + "px");
+          bgEl.style.setProperty("--cursor-y", currentY.toFixed(1) + "px");
+
+          requestAnimationFrame(animate);
+        }
+      })();
     </script>
   </body>
 </html>

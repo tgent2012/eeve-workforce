@@ -187,10 +187,13 @@ html {
 }
 
 /* Interactive Lens Background Effect */
-:root {
+#interactive-bg {
   --cursor-x: 50vw;
   --cursor-y: 50vh;
   --reveal-size: 280px;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  contain: strict;
 }
 
 .bg-layer {
@@ -201,6 +204,8 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 /* Sharp Layer */
@@ -213,7 +218,8 @@ html {
 .layer-mist {
   z-index: -2;
   filter: blur(45px) saturate(1.2) brightness(1.08);
-  transform: scale(1.05);
+  transform: scale(1.05) translate3d(0, 0, 0);
+  will-change: mask-image, -webkit-mask-image;
 
   mask-image: radial-gradient(
     circle var(--reveal-size) at var(--cursor-x) var(--cursor-y),
@@ -239,7 +245,116 @@ html {
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
+
+/* GPU promotion for translucent cards */
+.glass-panel-light,
+.glass-panel-light-strong {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==========================================================================
+   DARK MODE COMPREHENSIVE DESIGN SYSTEM OVERRIDES
+   ========================================================================== */
+
+html.dark,
+body.dark {
+  background-color: #0A0A0C !important;
+  color: #F4F4F5 !important;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #27272A;
+}
+
+html.dark .bg-layer {
+  background-image: url("/assets/dark_aura_mesh_background.jpg") !important;
+}
+
+html.dark .layer-sharp {
+  filter: brightness(0.95) contrast(1.1);
+}
+
+html.dark .layer-mist {
+  filter: blur(50px) saturate(1.4) brightness(0.85);
+}
+
+/* Dark Mode Typography Adjustments */
+html.dark .hero-heading,
+html.dark .section-heading,
+html.dark .card-title,
+html.dark .editorial-pullquote {
+  color: #FFFFFF !important;
+}
+
+html.dark .editorial-statement {
+  color: #F4F4F5 !important;
+}
+
+html.dark .body-copy {
+  color: #A1A1AA !important;
+}
+
+html.dark .card-body {
+  color: #94A3B8 !important;
+}
+
+html.dark .section-label {
+  color: #F87171 !important;
+}
+
+/* Glassmorphism Containers Dark Overrides */
+html.dark .bg-white\/32,
+html.dark .bg-white\/28,
+html.dark .bg-white\/45,
+html.dark .bg-white\/80,
+html.dark .bg-white\/95 {
+  background-color: rgba(18, 18, 23, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+html.dark .border-\[\#EAEAEA\],
+html.dark .border-slate-100\/60,
+html.dark .border-white\/45,
+html.dark .border-white\/55 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark .text-\[\#111111\],
+html.dark .text-\[\#161616\],
+html.dark .text-\[\#171717\] {
+  color: #FFFFFF !important;
+}
+
+html.dark .text-\[\#6B7280\],
+html.dark .text-\[\#555555\],
+html.dark .text-\[\#666666\],
+html.dark .text-\[\#5B6473\] {
+  color: #A1A1AA !important;
+}
+
+/* Navigation & Floating Dock Dark Tweaks */
+html.dark header {
+  background-color: rgba(10, 10, 12, 0.85) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark header nav a {
+  color: #A1A1AA !important;
+}
+
+html.dark header nav a:hover {
+  color: #FFFFFF !important;
+}
+
 
 
 

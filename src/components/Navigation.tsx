@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Logo } from "./Logo";
 import { LiquidButton } from "./ui/liquid-glass-button";
 
@@ -10,6 +10,19 @@ export const Navigation: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return document.documentElement.classList.contains("dark");
+  });
+
+  const toggleDarkMode = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
+    }
+  };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -32,25 +45,50 @@ export const Navigation: React.FC = () => {
   // Track active section for indicator line
   useEffect(() => {
     const sections = ["about", "what-we-do", "industries", "platform", "faq", "contact"];
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 120;
+    let ticking = false;
+    let cached: { id: string; top: number; bottom: number }[] = [];
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section);
-            return;
-          }
-        }
-      }
-      setActiveSection("");
+    const updateOffsets = () => {
+      cached = sections
+        .map((id) => {
+          const el = document.getElementById(id);
+          if (!el) return null;
+          const rect = el.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
+          return { id, top, bottom: top + el.offsetHeight };
+        })
+        .filter(Boolean) as { id: string; top: number; bottom: number }[];
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    updateOffsets();
+    window.addEventListener("resize", updateOffsets, { passive: true });
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollPos = window.scrollY + 120;
+          let matched = "";
+
+          for (let i = 0; i < cached.length; i++) {
+            const { id, top, bottom } = cached[i];
+            if (scrollPos >= top && scrollPos < bottom) {
+              matched = id;
+              break;
+            }
+          }
+
+          setActiveSection((prev) => (prev !== matched ? matched : prev));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateOffsets);
+    };
   }, []);
 
   const navItems = [
@@ -108,7 +146,25 @@ export const Navigation: React.FC = () => {
           </nav>
 
           {/* Actions right */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* Dark Mode Toggle Button */}
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2.5 rounded-full transition-all duration-300 border flex items-center justify-center cursor-pointer ${
+                isDarkMode
+                  ? "bg-white/10 text-amber-300 border-white/20 hover:bg-white/20"
+                  : "bg-black/5 text-slate-700 border-slate-200 hover:bg-black/10 hover:text-black"
+              }`}
+              title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              aria-label="Toggle Theme"
+            >
+              {isDarkMode ? (
+                <Sun className="w-4 h-4 text-amber-300" />
+              ) : (
+                <Moon className="w-4 h-4 text-slate-700" />
+              )}
+            </button>
+
             <a href="#contact" className="hidden sm:inline-block">
               <LiquidButton size="lg" className="font-semibold text-black tracking-wide">
                 Get in touch
@@ -182,6 +238,13 @@ export const Navigation: React.FC = () => {
 
               {/* Bottom Actions inside drawer */}
               <div className="pt-6 border-t border-slate-100/60 flex flex-col gap-4">
+                <button
+                  onClick={toggleDarkMode}
+                  className="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-white font-medium text-sm flex items-center justify-center gap-2"
+                >
+                  {isDarkMode ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-slate-700" />}
+                  <span>{isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}</span>
+                </button>
                 <a 
                   href="#contact" 
                   onClick={() => setIsMobileMenuOpen(false)}

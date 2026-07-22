@@ -477,6 +477,8 @@ export const Problem: React.FC = () => {
               <img
                 src="/assets/conversation_potential_1.jpg"
                 alt="Boutique reception welcome"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
             </div>
@@ -486,6 +488,8 @@ export const Problem: React.FC = () => {
               <img
                 src="/assets/conversation_potential_2.jpg"
                 alt="Architectural studio phone call"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
             </div>

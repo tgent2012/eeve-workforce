@@ -102,6 +102,19 @@ const LineSidebar: React.FC<LineSidebarProps> = ({
     rafRef.current = requestAnimationFrame(runFrame);
   }, [runFrame]);
 
+  const itemCentersRef = useRef<number[]>([]);
+
+  const measureCenters = useCallback(() => {
+    const itemsList = itemRefs.current;
+    itemCentersRef.current = itemsList.map((el) => (el ? el.offsetTop + el.offsetHeight / 2 : 0));
+  }, []);
+
+  useEffect(() => {
+    measureCenters();
+    window.addEventListener("resize", measureCenters, { passive: true });
+    return () => window.removeEventListener("resize", measureCenters);
+  }, [measureCenters, items]);
+
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLUListElement>) => {
       const list = listRef.current;
@@ -109,11 +122,9 @@ const LineSidebar: React.FC<LineSidebarProps> = ({
       const rect = list.getBoundingClientRect();
       const pointerY = e.clientY - rect.top;
       const ease = FALLOFF_CURVES[falloff] ?? FALLOFF_CURVES.linear;
-      const itemsList = itemRefs.current;
-      for (let i = 0; i < itemsList.length; i++) {
-        const el = itemsList[i];
-        if (!el) continue;
-        const center = el.offsetTop + el.offsetHeight / 2;
+      const centers = itemCentersRef.current;
+      for (let i = 0; i < centers.length; i++) {
+        const center = centers[i] || 0;
         const distance = Math.abs(pointerY - center);
         targetsRef.current[i] = ease(Math.max(0, 1 - distance / proximityRadius));
       }
