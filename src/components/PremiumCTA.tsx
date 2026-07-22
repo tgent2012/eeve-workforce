@@ -19,7 +19,7 @@ export const PremiumCTA: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center"
         >
-          <span className="inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.2em] font-semibold border rounded-full px-4.5 py-1.5 text-[#6B7280] border-[#EAEAEA] bg-[#FAFAFA] backdrop-blur-md">
+          <span className="inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.2em] font-bold border rounded-full px-4.5 py-1.5 text-[#111111] !text-[#111111] border-[#D1D5DB] bg-white/90 backdrop-blur-md shadow-xs">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24" 
@@ -46,7 +46,7 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#111111] dark:text-white tracking-tight leading-[1.15] sm:leading-[1.1]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#111111] !text-[#111111] tracking-tight leading-[1.15] sm:leading-[1.1]"
           >
             EEVE is ready to accelerate your business.
           </motion.h2>
@@ -55,9 +55,9 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] dark:text-white mt-1.5 sm:mt-2 leading-[1.15] sm:leading-[1.1]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] !text-[#111111] mt-1.5 sm:mt-2 leading-[1.15] sm:leading-[1.1]"
           >
-            <span className="italic font-serif text-[#A31D1D] dark:text-[#F87171] font-extrabold pr-1">
+            <span className="italic font-serif text-[#A31D1D] !text-[#A31D1D] font-extrabold pr-1">
               Are you?
             </span>
           </motion.h2>
@@ -67,7 +67,7 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="mt-6 text-base md:text-lg text-[#6B7280] font-sans font-normal max-w-xl mx-auto leading-relaxed text-balance"
+            className="mt-6 text-base md:text-lg text-[#2A2A2A] !text-[#2A2A2A] font-sans font-medium max-w-xl mx-auto leading-relaxed text-balance"
           >
             Book a demo with us to see how EEVE can help you.
           </motion.p>
@@ -92,9 +92,9 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 flex items-center justify-center text-sm text-[#6B7280] font-sans"
+            className="mt-12 flex items-center justify-center text-sm font-sans"
           >
-            <a href="mailto:hello@eeve.ai" className="group hover:text-[#111111] transition-colors duration-200 flex items-center gap-2 cursor-pointer">
+            <a href="mailto:hello@eeve.ai" className="group text-[#111111] !text-[#111111] hover:text-[#A31D1D] transition-colors duration-200 flex items-center gap-2 cursor-pointer font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" className="h-4 w-4 text-[#A31D1D]"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
               hello@eeve.ai
             </a>
