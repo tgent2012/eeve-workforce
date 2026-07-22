@@ -55,9 +55,9 @@ export const PremiumCTA: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-black tracking-tight text-[#111111] mt-2 leading-[1.1]"
+            className="text-4xl md:text-6xl font-black tracking-tight text-[#111111] dark:text-white mt-2 leading-[1.1]"
           >
-            <span className="bg-clip-text italic font-serif bg-gradient-to-r from-[#A31D1D] to-[#6B0F1A] text-transparent pr-1">
+            <span className="italic font-serif text-[#A31D1D] dark:text-[#F87171] font-extrabold pr-1">
               Are you?
             </span>
           </motion.h2>
