@@ -4,9 +4,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-function cn(...inputs: any[]) {
-  return inputs.filter(Boolean).join(" ");
-}
+import { cn } from "../../lib/utils"
 
 const buttonVariants = cva(
   "inline-flex items-center cursor-pointer justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -58,7 +56,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-export { Button, buttonVariants, liquidbuttonVariants, LiquidButton }
+export { Button, buttonVariants, liquidbuttonVariants, LiquidButton, MetalButton }
 
 const liquidbuttonVariants = cva(
   "inline-flex items-center transition-colors justify-center cursor-pointer gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -105,27 +103,78 @@ function LiquidButton({
   const Comp = asChild ? Slot : "button"
 
   return (
-    <Comp
-      data-slot="button"
-      className={cn(
-        "relative group overflow-hidden rounded-full border border-white/80 dark:border-white/20 bg-white/50 hover:bg-white/70 dark:bg-white/12 dark:hover:bg-white/22 backdrop-blur-[24px] saturate-[180%] shadow-[0_8px_24px_rgba(15,23,42,0.08),inset_0_1.5px_2px_rgba(255,255,255,0.9)] hover:shadow-[0_12px_32px_rgba(15,23,42,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300",
-        liquidbuttonVariants({ variant, size, className })
-      )}
-      {...props}
-    >
-      {/* Top Glass Edge Reflection Sweep */}
-      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/90 to-transparent pointer-events-none z-10" />
+    <>
+      <Comp
+        data-slot="button"
+        className={cn(
+          "relative text-[#111111] dark:text-white font-bold",
+          liquidbuttonVariants({ variant, size, className })
+        )}
+        {...props}
+      >
+        <div className="absolute top-0 left-0 z-0 h-full w-full rounded-full 
+            shadow-[0_0_6px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.08),inset_3px_3px_0.5px_-3px_rgba(0,0,0,0.9),inset_-3px_-3px_0.5px_-3px_rgba(0,0,0,0.85),inset_1px_1px_1px_-0.5px_rgba(0,0,0,0.6),inset_-1px_-1px_1px_-0.5px_rgba(0,0,0,0.6),inset_0_0_6px_6px_rgba(0,0,0,0.12),inset_0_0_2px_2px_rgba(0,0,0,0.06),0_0_12px_rgba(255,255,255,0.15)] 
+        transition-all 
+        dark:shadow-[0_0_8px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.08),inset_3px_3px_0.5px_-3.5px_rgba(255,255,255,0.09),inset_-3px_-3px_0.5px_-3.5px_rgba(255,255,255,0.85),inset_1px_1px_1px_-0.5px_rgba(255,255,255,0.6),inset_-1px_-1px_1px_-0.5px_rgba(255,255,255,0.6),inset_0_0_6px_6px_rgba(255,255,255,0.12),inset_0_0_2px_2px_rgba(255,255,255,0.06),0_0_12px_rgba(0,0,0,0.15)]" />
+        <div
+          className="absolute top-0 left-0 isolate -z-10 h-full w-full overflow-hidden rounded-md"
+          style={{ backdropFilter: 'url("#container-glass")' }}
+        />
 
-      {/* Button Content */}
-      <div className="pointer-events-none z-10 flex items-center justify-center gap-2 whitespace-nowrap text-[#111111] dark:text-white font-bold">
-        {children}
-      </div>
-    </Comp>
+        <div className="pointer-events-none z-10 flex items-center justify-center gap-2 whitespace-nowrap">
+          {children}
+        </div>
+        <GlassFilter />
+      </Comp>
+    </>
   )
 }
 
 
+function GlassFilter() {
+  return (
+    <svg className="hidden">
+      <defs>
+        <filter
+          id="container-glass"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          colorInterpolationFilters="sRGB"
+        >
+          {/* Generate turbulent noise for distortion */}
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.05 0.05"
+            numOctaves="1"
+            seed="1"
+            result="turbulence"
+          />
 
+          {/* Blur the turbulence pattern slightly */}
+          <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
+
+          {/* Displace the source graphic with the noise */}
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="blurredNoise"
+            scale="70"
+            xChannelSelector="R"
+            yChannelSelector="B"
+            result="displaced"
+          />
+
+          {/* Apply overall blur on the final result */}
+          <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
+
+          {/* Output the result */}
+          <feComposite in="finalBlur" in2="finalBlur" operator="over" />
+        </filter>
+      </defs>
+    </svg>
+  );
+}
 
 type ColorVariant =
   | "default"
@@ -259,7 +308,7 @@ const ShineEffect = ({ isPressed }: { isPressed: boolean }) => {
   );
 };
  
-export const MetalButton = React.forwardRef<
+const MetalButton = React.forwardRef<
   HTMLButtonElement,
   MetalButtonProps
 >(({ children, className, variant = "default", ...props }, ref) => {
