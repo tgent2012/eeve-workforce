@@ -105,78 +105,27 @@ function LiquidButton({
   const Comp = asChild ? Slot : "button"
 
   return (
-    <>
-      <Comp
-        data-slot="button"
-        className={cn(
-          "relative",
-          liquidbuttonVariants({ variant, size, className })
-        )}
-        {...props}
-      >
-        <div className="absolute top-0 left-0 z-0 h-full w-full rounded-full 
-            shadow-[0_0_6px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.08),inset_3px_3px_0.5px_-3px_rgba(0,0,0,0.9),inset_-3px_-3px_0.5px_-3px_rgba(0,0,0,0.85),inset_1px_1px_1px_-0.5px_rgba(0,0,0,0.6),inset_-1px_-1px_1px_-0.5px_rgba(0,0,0,0.6),inset_0_0_6px_6px_rgba(0,0,0,0.12),inset_0_0_2px_2px_rgba(0,0,0,0.06),0_0_12px_rgba(255,255,255,0.15)] 
-        transition-all 
-        dark:shadow-[0_0_8px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.08),inset_3px_3px_0.5px_-3.5px_rgba(255,255,255,0.09),inset_-3px_-3px_0.5px_-3.5px_rgba(255,255,255,0.85),inset_1px_1px_1px_-0.5px_rgba(255,255,255,0.6),inset_-1px_-1px_1px_-0.5px_rgba(255,255,255,0.6),inset_0_0_6px_6px_rgba(255,255,255,0.12),inset_0_0_2px_2px_rgba(255,255,255,0.06),0_0_12px_rgba(0,0,0,0.15)]" />
-        <div
-          className="absolute top-0 left-0 isolate -z-10 h-full w-full overflow-hidden rounded-md"
-          style={{ backdropFilter: 'url("#container-glass")' }}
-        />
+    <Comp
+      data-slot="button"
+      className={cn(
+        "relative group overflow-hidden rounded-full border border-white/80 dark:border-white/20 bg-white/50 hover:bg-white/70 dark:bg-white/12 dark:hover:bg-white/22 backdrop-blur-[24px] saturate-[180%] shadow-[0_8px_24px_rgba(15,23,42,0.08),inset_0_1.5px_2px_rgba(255,255,255,0.9)] hover:shadow-[0_12px_32px_rgba(15,23,42,0.12),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300",
+        liquidbuttonVariants({ variant, size, className })
+      )}
+      {...props}
+    >
+      {/* Top Glass Edge Reflection Sweep */}
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/90 to-transparent pointer-events-none z-10" />
 
-        <div className="pointer-events-none z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-          {children}
-        </div>
-        <GlassFilter />
-      </Comp>
-    </>
+      {/* Button Content */}
+      <div className="pointer-events-none z-10 flex items-center justify-center gap-2 whitespace-nowrap text-[#111111] dark:text-white font-bold">
+        {children}
+      </div>
+    </Comp>
   )
 }
 
 
-function GlassFilter() {
-  return (
-    <svg className="hidden">
-      <defs>
-        <filter
-          id="container-glass"
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          colorInterpolationFilters="sRGB"
-        >
-          {/* Generate turbulent noise for distortion */}
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.05 0.05"
-            numOctaves="1"
-            seed="1"
-            result="turbulence"
-          />
 
-          {/* Blur the turbulence pattern slightly */}
-          <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
-
-          {/* Displace the source graphic with the noise */}
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="blurredNoise"
-            scale="70"
-            xChannelSelector="R"
-            yChannelSelector="B"
-            result="displaced"
-          />
-
-          {/* Apply overall blur on the final result */}
-          <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
-
-          {/* Output the result */}
-          <feComposite in="finalBlur" in2="finalBlur" operator="over" />
-        </filter>
-      </defs>
-    </svg>
-  );
-}
 
 type ColorVariant =
   | "default"
