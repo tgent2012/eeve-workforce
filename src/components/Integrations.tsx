@@ -81,184 +81,174 @@ export const Integrations: React.FC = () => {
         {/* Animated Beam Visual Container */}
         <div
           ref={containerRef}
-          className="relative flex h-[400px] sm:h-[480px] w-full max-w-3xl items-center justify-center overflow-hidden rounded-3xl bg-white/40 dark:bg-neutral-900/40 border border-white/60 dark:border-neutral-800 p-6 sm:p-10 backdrop-blur-xl shadow-[0_20px_50px_rgba(15,23,42,0.06),inset_0_2px_8px_rgba(255,255,255,0.7)]"
+          className="relative flex h-[380px] sm:h-[440px] w-full max-w-3xl items-center justify-between overflow-hidden rounded-3xl bg-white/40 dark:bg-neutral-900/40 border border-white/60 dark:border-neutral-800 p-6 sm:p-12 backdrop-blur-xl shadow-[0_20px_50px_rgba(15,23,42,0.06),inset_0_2px_8px_rgba(255,255,255,0.7)]"
         >
           {/* Glass Top Edge Sweep */}
           <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent pointer-events-none z-20" />
 
-          {/* 3-Column Node Layout (4 Left, Center EEVE, 4 Right) */}
-          <div className="flex size-full max-h-[340px] sm:max-h-[380px] max-w-xl flex-col items-stretch justify-between gap-4 sm:gap-6 relative z-10">
-            {/* Row 1 */}
-            <div className="flex flex-row items-center justify-between">
-              <Circle ref={div1Ref} label="WhatsApp">
-                <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-              </Circle>
-              <Circle ref={div5Ref} label="Gmail">
-                <img src="/mail-icon.png" alt="Gmail" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-              </Circle>
-            </div>
-
-            {/* Row 2 */}
-            <div className="flex flex-row items-center justify-between">
-              <Circle ref={div2Ref} label="Slack">
-                <img src="/slack-icon.png" alt="Slack" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-              </Circle>
-
-              {/* Center Node: EEVE AI Favicon */}
-              <Circle
-                ref={centerRef}
-                label="EEVE AI Engine"
-                className="size-16 sm:size-20 border-2 border-[#A31D1D] dark:border-[#FBBF24] bg-white dark:bg-neutral-950 shadow-[0_0_35px_rgba(163,29,29,0.35)] dark:shadow-[0_0_35px_rgba(251,191,36,0.35)]"
-              >
-                {/* EEVE AI Custom SVG Favicon Icon */}
-                <svg
-                  width="44"
-                  height="44"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-9 h-9 sm:w-10 sm:h-10"
-                >
-                  <rect
-                    x="20"
-                    y="30"
-                    width="40"
-                    height="14"
-                    rx="7"
-                    fill="currentColor"
-                    className="text-[#111111] dark:text-white"
-                  />
-                  <circle
-                    cx="74"
-                    cy="37"
-                    r="7"
-                    fill="#A31D1D"
-                    className="dark:fill-[#FBBF24]"
-                  />
-                  <rect
-                    x="20"
-                    y="50"
-                    width="60"
-                    height="14"
-                    rx="7"
-                    fill="currentColor"
-                    className="text-[#111111] dark:text-white"
-                  />
-                  <rect
-                    x="20"
-                    y="70"
-                    width="30"
-                    height="14"
-                    rx="7"
-                    fill="currentColor"
-                    className="text-[#111111] dark:text-white"
-                  />
-                </svg>
-              </Circle>
-
-              <Circle ref={div6Ref} label="Calendar">
-                <img src="/calendar-icon.png" alt="Calendar" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-              </Circle>
-            </div>
-
-            {/* Row 3 */}
-            <div className="flex flex-row items-center justify-between">
-              <Circle ref={div3Ref} label="Salesforce">
-                <IconCloud className="w-7 h-7 sm:w-8 sm:h-8 text-[#009EDB]" />
-              </Circle>
-              <Circle ref={div7Ref} label="Opera PMS / EHR">
-                <IconDatabase className="w-7 h-7 sm:w-8 sm:h-8 text-[#718096]" />
-              </Circle>
-            </div>
-
-            {/* Row 4 */}
-            <div className="flex flex-row items-center justify-between">
-              <Circle ref={div4Ref} label="SMS Gateway">
-                <img src="/sms-icon.png" alt="SMS Gateway" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
-              </Circle>
-              <Circle ref={div8Ref} label="n8n Webhooks">
-                <IconTerminal2 className="w-7 h-7 sm:w-8 sm:h-8 text-[#E28743]" />
-              </Circle>
-            </div>
+          {/* Left Column (4 Nodes stacked vertically) */}
+          <div className="flex flex-col justify-between h-full z-10">
+            <Circle ref={div1Ref} label="WhatsApp">
+              <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+            </Circle>
+            <Circle ref={div2Ref} label="Slack">
+              <img src="/slack-icon.png" alt="Slack" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+            </Circle>
+            <Circle ref={div3Ref} label="Salesforce">
+              <IconCloud className="w-7 h-7 sm:w-8 sm:h-8 text-[#009EDB]" />
+            </Circle>
+            <Circle ref={div4Ref} label="SMS Gateway">
+              <img src="/sms-icon.png" alt="SMS Gateway" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+            </Circle>
           </div>
 
-          {/* Animated Beams linking all 8 outer nodes to Center EEVE AI node */}
+          {/* Center EEVE AI Favicon Node (Dead Center) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <Circle
+              ref={centerRef}
+              label="EEVE AI Engine"
+              className="size-16 sm:size-20 border-2 border-[#10B981] dark:border-[#34D399] bg-white dark:bg-neutral-950 shadow-[0_0_35px_rgba(16,185,129,0.35)] dark:shadow-[0_0_35px_rgba(52,211,153,0.35)]"
+            >
+              {/* EEVE AI Custom SVG Favicon Icon with signature red dot */}
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-9 h-9 sm:w-10 sm:h-10"
+              >
+                <rect
+                  x="20"
+                  y="30"
+                  width="40"
+                  height="14"
+                  rx="7"
+                  fill="currentColor"
+                  className="text-[#111111] dark:text-white"
+                />
+                <circle
+                  cx="74"
+                  cy="37"
+                  r="7"
+                  fill="#E53935"
+                  className="dark:fill-[#FBBF24]"
+                />
+                <rect
+                  x="20"
+                  y="50"
+                  width="60"
+                  height="14"
+                  rx="7"
+                  fill="currentColor"
+                  className="text-[#111111] dark:text-white"
+                />
+                <rect
+                  x="20"
+                  y="70"
+                  width="30"
+                  height="14"
+                  rx="7"
+                  fill="currentColor"
+                  className="text-[#111111] dark:text-white"
+                />
+              </svg>
+            </Circle>
+          </div>
+
+          {/* Right Column (4 Nodes stacked vertically) */}
+          <div className="flex flex-col justify-between h-full z-10">
+            <Circle ref={div5Ref} label="Gmail">
+              <img src="/mail-icon.png" alt="Gmail" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+            </Circle>
+            <Circle ref={div6Ref} label="Calendar">
+              <img src="/calendar-icon.png" alt="Calendar" className="w-7 h-7 sm:w-8 sm:h-8 object-contain" />
+            </Circle>
+            <Circle ref={div7Ref} label="Opera PMS / EHR">
+              <IconDatabase className="w-7 h-7 sm:w-8 sm:h-8 text-[#718096]" />
+            </Circle>
+            <Circle ref={div8Ref} label="n8n Webhooks">
+              <IconTerminal2 className="w-7 h-7 sm:w-8 sm:h-8 text-[#E28743]" />
+            </Circle>
+          </div>
+
+          {/* Animated Light Green Beams linking all 8 outer nodes to Center EEVE AI node */}
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div1Ref}
             toRef={centerRef}
-            curvature={-90}
-            endYOffset={-18}
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            curvature={-60}
+            endYOffset={-12}
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div2Ref}
             toRef={centerRef}
-            curvature={-30}
-            endYOffset={-6}
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            curvature={-20}
+            endYOffset={-4}
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div3Ref}
             toRef={centerRef}
-            curvature={30}
-            endYOffset={6}
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            curvature={20}
+            endYOffset={4}
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div4Ref}
             toRef={centerRef}
-            curvature={90}
-            endYOffset={18}
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            curvature={60}
+            endYOffset={12}
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div5Ref}
             toRef={centerRef}
-            curvature={-90}
-            endYOffset={-18}
+            curvature={-60}
+            endYOffset={-12}
             reverse
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div6Ref}
             toRef={centerRef}
-            curvature={-30}
-            endYOffset={-6}
+            curvature={-20}
+            endYOffset={-4}
             reverse
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div7Ref}
             toRef={centerRef}
-            curvature={30}
-            endYOffset={6}
+            curvature={20}
+            endYOffset={4}
             reverse
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
           <AnimatedBeam
             containerRef={containerRef}
             fromRef={div8Ref}
             toRef={centerRef}
-            curvature={90}
-            endYOffset={18}
+            curvature={60}
+            endYOffset={12}
             reverse
-            gradientStartColor="#A31D1D"
-            gradientStopColor="#F06D5F"
+            gradientStartColor="#10B981"
+            gradientStopColor="#4ADE80"
           />
         </div>
       </div>
