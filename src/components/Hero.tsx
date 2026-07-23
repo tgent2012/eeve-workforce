@@ -90,24 +90,27 @@ export const Hero: React.FC = () => {
           className="lg:col-span-5 flex justify-center items-center relative mt-8 lg:mt-0 h-[360px] sm:h-[450px] lg:h-[520px] w-full"
         >
           {/* Ambient Glow */}
-          <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-[#A31D1D]/15 via-[#FBBF24]/10 to-transparent blur-3xl -z-10 pointer-events-none" />
+          <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-[#6116f9]/15 via-[#00154f]/10 to-transparent blur-3xl -z-10 pointer-events-none" />
 
-          {/* Strands Component */}
+          {/* Strands Component with updated user configuration */}
           <Strands
-            colors={["#A31D1D", "#FBBF24", "#E53935", "#06B6D4"]}
-            count={4}
-            speed={0.6}
-            amplitude={1.2}
-            waviness={1.2}
-            thickness={0.8}
-            glow={2.8}
+            colors={["#6116f9", "#112119", "#00154f"]}
+            count={3}
+            speed={0.5}
+            amplitude={1}
+            waviness={1}
+            thickness={0.7}
+            glow={2.6}
             taper={3}
-            spread={1.2}
-            intensity={0.7}
+            spread={0.9}
+            intensity={0.6}
             saturation={1.5}
             opacity={1}
-            scale={1.4}
+            scale={1.9}
             glass={false}
+            refraction={1}
+            dispersion={1}
+            glassSize={1}
           />
         </motion.div>
 
