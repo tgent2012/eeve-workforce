@@ -81,7 +81,7 @@ export const PremiumCTA: React.FC = () => {
             >
               <span>Book A Free Call</span>
               <svg className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
               </svg>
             </LiquidButton>
           </div>
@@ -95,7 +95,7 @@ export const PremiumCTA: React.FC = () => {
             className="mt-12 flex items-center justify-center text-sm font-sans"
           >
             <a href="mailto:hello@eeve.ai" className="group text-[#111111] !text-[#111111] hover:text-[#A31D1D] transition-colors duration-200 flex items-center gap-2 cursor-pointer font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" className="h-4 w-4 text-[#A31D1D]"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-[#A31D1D]"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
               hello@eeve.ai
             </a>
           </motion.div>
