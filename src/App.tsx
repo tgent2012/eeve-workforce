@@ -12,7 +12,6 @@ import { PremiumCTA } from "./components/PremiumCTA";
 import { Footer } from "./components/Footer";
 import { Integrations } from "./components/Integrations";
 import LineSidebar from "./components/LineSidebar";
-import GradualBlur from "./components/ui/GradualBlur";
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
@@ -112,55 +111,31 @@ function App() {
           />
         </div>
 
-        {/* Main Storytelling Sections with Gradual Blur Transitions */}
+        {/* Main Storytelling Sections */}
         <main>
           {/* Section 1: Hero Visual Nodes Canvas & Abstract Sculpture */}
-          <div className="relative">
-            <Hero />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <Hero />
 
           {/* Section 2: About EEVE (Bento Editorial layout with clean text columns) */}
-          <div className="relative">
-            <WhatIsEeve />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <WhatIsEeve />
 
           {/* Section 3: Why Businesses Choose EEVE (Photography Editorial Cards, Trust & Outcomes) */}
-          <div className="relative">
-            <EnterpriseTrust />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <EnterpriseTrust />
 
           {/* Section 4: What We Do (Opportunity Copy & Morphing BEFORE/WITH Diagram) */}
-          <div className="relative">
-            <Problem />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <Problem />
 
           {/* Section 5: Built Around Your Business (Fullscreen Expanding Accordion transitions) */}
-          <div className="relative">
-            <IndustryBlueprints />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <IndustryBlueprints />
 
           {/* Section 6: Enterprise Integrations (Converging App Icons driven by scroll progress) */}
-          <div className="relative">
-            <Integrations />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <Integrations />
 
           {/* Section 7: See EEVE In Action (Lemon Tree Premier Dashboard Showcase & Live Feeds inside ContainerScroll) */}
-          <div className="relative">
-            <VoiceToVerified />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <VoiceToVerified />
 
           {/* FAQ Accordion (Accordion, Minimal, No borders, Smooth expand) */}
-          <div className="relative">
-            <FAQ />
-            <GradualBlur position="bottom" height="6rem" strength={2} divCount={6} curve="bezier" animated="scroll" />
-          </div>
+          <FAQ />
 
           {/* Premium CTA (Crimson Drifting Gradient, Discovery Call, Contact) */}
           <PremiumCTA />
