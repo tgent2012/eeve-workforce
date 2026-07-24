@@ -7,7 +7,6 @@ import { LiquidButton } from "./ui/liquid-glass-button";
 export const Navigation: React.FC = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -25,24 +24,14 @@ export const Navigation: React.FC = () => {
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    
-    // Transparent while on hero, white with blur after scrolling
-    if (latest > 50) {
+    if (latest > 30) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
     }
-
-    // Smooth navigation hide on scroll down, show on scroll up
-    if (latest > previous && latest > 150) {
-      setIsHidden(true);
-    } else {
-      setIsHidden(false);
-    }
   });
 
-  // Track active section for indicator line
+  // Track active section for link indicator
   useEffect(() => {
     const sections = ["about", "what-we-do", "industries", "platform", "faq", "contact"];
     let ticking = false;
@@ -102,42 +91,41 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
+      {/* Clean Horizontal Sticky Header */}
       <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: -100 },
-        }}
-        animate={isHidden ? "hidden" : "visible"}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md py-3 shadow-xs"
+            ? "bg-white/85 dark:bg-neutral-950/85 backdrop-blur-md py-3.5 border-b border-black/5 dark:border-white/10 shadow-xs"
             : "bg-transparent py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 flex items-center justify-between">
-          {/* Logo left */}
-          <a href="#" className="text-black hover:opacity-80 transition-opacity">
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-16 xl:px-20 flex items-center justify-between">
+          
+          {/* Logo on Far Left */}
+          <a href="#" className="flex items-center hover:opacity-80 transition-opacity select-none">
             <Logo />
           </a>
 
-          {/* Menu center/right */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Navigation Links in Center */}
+          <nav className="hidden lg:flex items-center gap-8 font-sans">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`text-sm font-sans font-medium transition-colors duration-200 relative py-1 ${
+                className={`text-sm font-medium transition-colors duration-200 relative py-1 ${
                   activeSection === item.id
-                    ? "text-[#A31D1D]"
-                    : "text-slate-600 hover:text-slate-900"
+                    ? "text-[#A31D1D] dark:text-[#FBBF24] font-semibold"
+                    : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeNavLine"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#A31D1D]"
+                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#A31D1D] dark:bg-[#FBBF24] rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -145,9 +133,9 @@ export const Navigation: React.FC = () => {
             ))}
           </nav>
 
-          {/* Actions right */}
+          {/* Primary Actions & CTA at Far Right */}
           <div className="flex items-center gap-3">
-            {/* Dark Mode Toggle Button */}
+            {/* Theme Toggle Button */}
             <button
               onClick={toggleDarkMode}
               className={`p-2.5 rounded-full transition-all duration-300 border flex items-center justify-center cursor-pointer ${
@@ -165,25 +153,27 @@ export const Navigation: React.FC = () => {
               )}
             </button>
 
+            {/* Primary CTA Button */}
             <a href="#contact" className="hidden sm:inline-block">
               <LiquidButton size="lg" className="font-semibold text-black tracking-wide">
                 Get in touch
               </LiquidButton>
             </a>
 
-            {/* Hamburger Toggle */}
+            {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 lg:hidden text-slate-700 hover:text-slate-900 focus:outline-none transition-colors"
+              className="p-2 lg:hidden text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white focus:outline-none transition-colors cursor-pointer"
               aria-label="Toggle mobile menu"
             >
               <Menu className="w-6 h-6" />
             </button>
           </div>
+
         </div>
       </motion.header>
 
-      {/* Mobile Menu Drawer Overlay */}
+      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -193,7 +183,7 @@ export const Navigation: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/15 backdrop-blur-[2px] z-45 lg:hidden"
+              className="fixed inset-0 bg-black/20 backdrop-blur-xs z-50 lg:hidden"
             />
             
             {/* Drawer Panel */}
@@ -201,16 +191,16 @@ export const Navigation: React.FC = () => {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 280, damping: 30 }}
-              className="fixed top-0 right-0 bottom-0 w-[290px] bg-white/80 backdrop-blur-[35px] border-l border-white/40 shadow-2xl z-50 p-6 flex flex-col justify-between lg:hidden text-left"
+              transition={{ type: "spring", stiffness: 300, damping: 32 }}
+              className="fixed top-0 right-0 bottom-0 w-[290px] bg-white/95 dark:bg-neutral-950/95 backdrop-blur-2xl border-l border-slate-200/80 dark:border-neutral-800 shadow-2xl z-50 p-6 flex flex-col justify-between lg:hidden text-left"
             >
               <div>
                 {/* Header inside drawer */}
-                <div className="flex items-center justify-between pb-6 border-b border-slate-100/60 mb-8">
+                <div className="flex items-center justify-between pb-6 border-b border-slate-100 dark:border-neutral-800 mb-8">
                   <Logo />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-slate-700 hover:text-slate-900 focus:outline-none"
+                    className="p-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none"
                     aria-label="Close mobile menu"
                   >
                     <X className="w-5 h-5" />
@@ -224,10 +214,10 @@ export const Navigation: React.FC = () => {
                       key={item.id}
                       href={`#${item.id}`}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-base font-sans font-semibold transition-colors duration-200 py-1.5 border-b border-transparent hover:border-slate-200 ${
+                      className={`text-base font-sans font-semibold transition-colors duration-200 py-1.5 border-b border-transparent hover:border-slate-200 dark:hover:border-neutral-800 ${
                         activeSection === item.id
-                          ? "text-[#A31D1D]"
-                          : "text-slate-600 hover:text-slate-900"
+                          ? "text-[#A31D1D] dark:text-[#FBBF24]"
+                          : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       }`}
                     >
                       {item.label}
@@ -237,26 +227,24 @@ export const Navigation: React.FC = () => {
               </div>
 
               {/* Bottom Actions inside drawer */}
-              <div className="pt-6 border-t border-slate-100/60 flex flex-col gap-4">
+              <div className="pt-6 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-4">
                 <button
                   onClick={toggleDarkMode}
-                  className="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-white font-medium text-sm flex items-center justify-center gap-2"
+                  className="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-white font-medium text-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
                   {isDarkMode ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-slate-700" />}
                   <span>{isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}</span>
                 </button>
+                
                 <a 
                   href="#contact" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full"
                 >
-                  <LiquidButton size="lg" className="w-full font-semibold text-black tracking-wide text-center">
+                  <LiquidButton size="lg" className="w-full font-semibold text-black tracking-wide text-center justify-center">
                     Get in touch
                   </LiquidButton>
                 </a>
-                <span className="text-[10px] font-mono text-slate-400 text-center block w-full">
-                  EEVE AI · from hello to handled
-                </span>
               </div>
             </motion.div>
           </>
@@ -265,4 +253,5 @@ export const Navigation: React.FC = () => {
     </>
   );
 };
+
 export default Navigation;
