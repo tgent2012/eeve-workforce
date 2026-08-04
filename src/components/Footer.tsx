@@ -45,7 +45,9 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/133388027/admin/dashboard/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn" 
                 className="w-9 h-9 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-[#A31D1D] dark:hover:text-[#FBBF24] hover:bg-[#A31D1D]/10 dark:hover:bg-[#FBBF24]/15 transition-all duration-200 cursor-pointer"
               >
