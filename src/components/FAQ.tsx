@@ -8,28 +8,28 @@ export const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      q: "What is Workforce Intelligence?",
-      a: "Workforce Intelligence is a new category of enterprise software that transforms raw speech data into verified database actions. Instead of simply generating chat transcripts, EEVE executes operations directly into systems of record under custom policy rules."
+      q: "What is an AI Voice Agent and AI Employee?",
+      a: "An AI Voice Agent and AI Employee from eeveai is an autonomous software worker that answers inbound phone calls, conducts natural human-like conversations, handles appointment bookings, updates CRMs, and uses proprietary proof-of-work engines to verify that the task was actually completed — serving businesses across India, UAE, and MEASA."
     },
     {
-      q: "How is EEVE different from Voice AI?",
-      a: "Voice AI simply transcribes and answers calls. EEVE acts as a workforce intelligence agent: checking live database capacity, enforcing company policies, creating transaction folios, and scheduling downstream workflows automatically."
+      q: "How does eeveai function as an AI Receptionist for businesses?",
+      a: "eeveai acts as a 24/7 AI Receptionist for hotels, clinics, real estate agencies, automotive dealerships, and retail businesses. It handles call spikes, answers customer questions, checks live database availability, and books reservations without human intervention."
     },
     {
-      q: "Can EEVE integrate with our existing systems?",
-      a: "Yes. EEVE is built to interface directly with existing PMS, CRM, ERP, and calendar databases of record via secure APIs, acting as the intelligent orchestration layer."
+      q: "What makes eeveai different from standard Voice AI tools?",
+      a: "Standard Voice AI simply transcribes and answers calls. eeveai acts as a Workforce Intelligence agent: checking live database capacity, enforcing company policy rules, writing transactions directly to system of record databases (PMS, CRM, EHR, ERP), and delivering verified proof-of-work logs."
     },
     {
-      q: "Does EEVE replace our employees?",
-      a: "No. EEVE absorbs repetitive operational tasks—like checking hold codes or data entry—so human teams can focus on high-value guest relations and complex escalations."
+      q: "Which regions do eeveai AI Voice Agents serve?",
+      a: "eeveai is based in the UAE with R&D out of Trivandrum, India, and operations in Dubai. We deploy multi-lingual AI Voice Agents and AI Employees for enterprise clients across India, Dubai, the UAE, and the wider MEASA region."
     },
     {
-      q: "How long does deployment take?",
-      a: "A typical EEVE instance is calibrated and deployed within 14 business days, complete with verified policy limits and system integration tests."
+      q: "Can eeveai AI Voice Agents integrate with our existing CRM and PMS databases?",
+      a: "Yes. eeveai is built to interface directly with existing PMS, CRM, ERP, EHR, and calendar databases of record via secure APIs, acting as the intelligent execution layer."
     },
     {
-      q: "Is EEVE secure?",
-      a: "Yes. EEVE enforces strict enterprise security protocols, including multi-factor verification prompts, custom permission guardrails, audit logging, and full encryption of data in transit and at rest."
+      q: "Do eeveai AI Employees replace human staff?",
+      a: "No. eeveai AI Employees absorb repetitive operational tasks—like phone answering, hold-code checking, and routine data entry—so human teams can focus on high-value guest relations and complex escalations."
     }
   ];
 
