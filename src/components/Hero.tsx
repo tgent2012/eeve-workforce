@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PointerHighlight } from "./ui/pointer-highlight";
 import { LiquidButton } from "./ui/liquid-glass-button";
 
@@ -14,19 +14,6 @@ export const Hero: React.FC = () => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] lg:w-[1000px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-[#A31D1D]/15 via-[#FBBF24]/10 to-transparent blur-[120px] rounded-full -z-10 pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto flex flex-col items-start justify-center gap-8 sm:gap-12 relative z-20 select-none">
-        
-        {/* Top Minimal Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#A31D1D]/10 dark:bg-[#FBBF24]/15 border border-[#A31D1D]/20 dark:border-[#FBBF24]/30 text-xs sm:text-sm font-semibold tracking-wide text-[#A31D1D] dark:text-[#FBBF24]"
-        >
-          <Sparkles className="w-4 h-4 text-[#A31D1D] dark:text-[#FBBF24]" />
-          <span>ENTERPRISE VOICE AI</span>
-          <span className="opacity-40">•</span>
-          <span className="opacity-80">WORKFORCE INTELLIGENCE</span>
-        </motion.div>
 
         {/* Oversized Dominant Headline */}
         <motion.h1
