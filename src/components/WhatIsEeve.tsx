@@ -46,14 +46,14 @@ export const WhatIsEeve: React.FC = () => {
             </p>
           </div>
           <div className="lg:col-span-7 lg:pl-12 flex flex-col gap-4 sm:gap-6 max-w-2xl text-left">
-            <p className="body-copy">
-              At EEVE, we believe intelligence should fit naturally into the way organisations already operate. Every business has its own way of serving customers, managing teams and running daily operations. That's why we never begin with technology—we begin by understanding your business.
+            <p className="body-copy font-semibold text-slate-800 dark:text-slate-200">
+              eeveai is an enterprise voice AI company that builds managed AI voice agents and AI employees. Its agents answer inbound phone calls, carry out back-office tasks such as bookings and CRM updates, and use proprietary proof-of-work verification engines to confirm the work was completed — not just logged.
             </p>
             <p className="body-copy">
-              For us, Workforce Intelligence starts with the conversations your business has every day. That's why every EEVE deployment is built around Voice AI that works naturally alongside your people, your processes and your customers.
+              Founded in 2025 and based in UAE with research and development out of India, with operations in Dubai, eeveai serves businesses across India, the UAE, and the wider MEASA region.
             </p>
             <p className="body-copy">
-              Every solution we create is thoughtfully designed around your people, your processes and your customer experience, integrating seamlessly into the way your organisation already works.
+              For us, Workforce Intelligence starts with the conversations your business has every day. Every EEVE deployment is built around Voice AI that works naturally alongside your people, your processes and your customers to turn every conversation into meaningful business outcomes.
             </p>
             <p className="body-copy">
               From discovery and deployment to optimisation and long-term support, we work as a technology partner—not just a software provider—helping businesses adopt AI with confidence while keeping people at the centre of every experience.
